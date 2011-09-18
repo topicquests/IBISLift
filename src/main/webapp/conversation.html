@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/style/conversation.css" type="text/css" media="all" />
+    <script type="text/javascript" src="/scripts/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src = "/scripts/jquery.scrollTo.js"></script>
+    <!--  <script type="text/javascript" src = "/scripts/ibis.js"></script> -->
+    <script type="text/javascript" src="/scripts/jquery-columnnav-1.1.0.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+     <script type="text/javascript" class="lift:Chat.setscripts"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function() {
+
+            $("ul#myTree").columnNavigation({
+                containerPosition:"relative",
+                containerWidth:"900px",
+                containerHeight:"210px",
+                containerBackgroundColor:"rgb(255,255,255)",
+                containerFontColor:"rgb(50,50,50)",
+                columnWidth:300,
+                columnFontFamily:"'Helvetica Neue', 'HelveticaNeue', Helvetica, sans-serif",
+                columnFontSize:"90%",
+                columnSeperatorStyle:"1px solid rgb(220,220,220)",
+                columnDeselectFontWeight:"normal",
+                columnDeselectColor:"rgb(50,50,50)",
+                columnSelectFontWeight:"normal",
+                columnSelectColor:"rgb(255,255,255)",
+                columnSelectBackgroundColor:"rgb(27,115,213)",
+                columnSelectBackgroundPosition:"top",
+                columnItemPadding:"3px 3px 5px 3px",
+                columnScrollVelocity:50,
+                callBackFunction    :  function(f) {
+                    loadnodes( f.attr("href") );
+                }
+
+            });
+
+            $( "#tabs" ).tabs();
+
+             scrollBottom();
+
+            /**
+             * When pressing enter in the chat textbox it submits the form
+             */
+            $("#chatinput").keydown(function(e) {
+              if (e.keyCode === 13 && !e.ctrlKey) {
+                e.preventDefault();
+                submitchat();
+              }
+             });
+
+
+        });
+
+        function scrollBottom(){
+          var height = $('#chat').height();
+          $('.chat-messages-container').animate({scrollTop: height}, 500);
+        }
+
+         //]]>
+    </script>
+
+</head>
+
+<body>
+<div style="align: left"><a href="/"><img src="/images/TQ9.gif" /></a></div>
+
+<script id="myscript"  class="lift:Conversation.preparejavascript"></script >
+<!--  <center> -->
+<div class="lift:comet?type=ConversationComet"></div>
+<div class="lift:Conversation.show" >
+
+    <table width="900px">
+        <tr>
+            <td>
+                <h2>Conversation: <v:title /></h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul id="myTree">
+                    <v:root />
+                </ul>
+            </td>
+        </tr>
+        <tr><td><h2>Selected Node</h2></td></tr>
+        <tr>
+            <td  width="900px">
+                <div id="imglabel"></div>
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Details</a></li>
+                        <li><a href="#tabs-2">Edit</a></li>
+                        <li><a href="#tabs-3">Respond</a></li>
+                        <li><a href="#tabs-4">Tags</a></li>
+                        <li><a href="#tabs-5">Connections</a></li>
+                        <li><a href="#tabs-6">Chat</a></li>
+                    </ul>
+                    <div id="tabs-1"></div>
+                    <div id="tabs-2">Not available</div>
+                    <div id="tabs-3">
+                        <div id="tab3" ></div>
+                    </div>
+                    <div id="tabs-4"></div>
+                    <div id="tabs-5"></div>
+                    <div id="tabs-6">
+                        <div class="lift:comet?type=ChatComet"></div>
+                        <div class="chat-messages-container lift:Chat.loadChat">
+                            <div class="chat-messages" id="chat" style="padding-bottom: 50px; ">                                
+                                <div id="message"></div>
+                            </div>
+                        </div>
+                        <div class="lift:Chat.prepare">
+                             <form id="chatform" class="chatform" class="lift:form.ajax">
+                                <div><small>Enter text:</small></div>
+                                <input type="text" id="chatinput" size="60" style="height:38px;"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--  </center> -->
+
+</body>
+</html>

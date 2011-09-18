@@ -1,0 +1,11 @@
+#lift__noticesContainer__ li {padding:5px; list-style-type:none;}
+#lift__noticesContainer___notice {color:green;}
+#lift__noticesContainer___warning {color:yellow;}
+#lift__noticesContainer___error {color:red;}
+.chat-messages-container {overflow: auto;overflow-y: scroll;background-color: white;max-height: 300px;border: 1px solid #CCCCCC;}
+.chat-welcome-message {padding: 3px 0;color: #4076B3;}
+.message {position: relative;padding: 10px 2px 6px 2px;color: #525252;}
+.message-content {position: relative;min-width: 0;padding-left: 41px;min-height: 33px;}
+.message-timestamp {font-size: .77em;line-height: 1.0em;color: #AAA;height: 12px;}
+.message-profile-name {font-weight: bold;}
+.message-profile-image {position: absolute;top: 10px;left: 2px;}

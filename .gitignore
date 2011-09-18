@@ -1,0 +1,7 @@
+.DS_Store
+/project/boot/
+/project/plugins/project
+target/
+lib_managed/
+.idea
+IbisliftV2.iml
