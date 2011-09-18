@@ -5,3 +5,5 @@ target/
 lib_managed/
 .idea
 IbisliftV2.iml
+lift_proto.db.h2.db
+lift_proto.db.lock.db
