@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <title>Home</title>
+     <link href="/style/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body class="lift:content_id=main">
+   <div id="main" class="lift:surround?with=default;at=content">
+    <lift:Conversations.addnewconversation form="POST">
+     <fieldset>
+      <legend>Start a New Conversation</legend>
+      <div>
+       <fieldset>
+        <legend>Step1: Enter a Conversation Title</legend>
+        <label for="title">Conversation title:<span>*</span></label>
+        <entry:title ></entry:title>
+       </fieldset>
+      </div>
+     <div>
+      <fieldset>
+       <legend>Create the Conversations Opening Statement or Question</legend>
+       <div class="radio">
+        <fieldset>
+         <legend><span>Step2: Select a Node type:<span>*</span> </span></legend>
+          <div>
+           Question<entry:question></entry:question><img src="/images/ibis/issue.png" />
+           &nbsp; &nbsp;
+           Idea<entry:idea></entry:idea><img src="/images/ibis/position.png" />
+		 </div>
+        </fieldset>
+       </div>
+       <div>
+        <fieldset>
+         <legend><span>Step3: State the Idea or Question<span>*</span> </span></legend>
+         <label for="label">Statement:<span>*</span></label>
+         <entry:label></entry:label>
+        </fieldset>
+       </div>
+       <div>
+        <fieldset>
+  		 <legend>Step4: Explain the Details (Optional)</legend>
+  		 <entry:details></entry:details>
+  		</fieldset>
+  	   </div>
+  	  </fieldset>
+     </div>
+     <entry:submit></entry:submit>
+  </fieldset>
+  </lift:Conversations.addnewconversation>
+ </div>
+  </body>
+</html>

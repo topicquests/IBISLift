@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font: 90%/ 1.3 arial, sans-serif;
+    padding: 1em;
+    background: #fafafa;
+}
+
+form {
+    background: #fff;
+    padding: 1em;
+    border: 1px solid #eee;
+}
+
+fieldset div {
+    margin: 0.3em 0;
+    clear: both;
+}
+
+fieldset div p {
+    margin-bottom: 20px;
+}
+
+fieldset div {
+    margin: 0.3em 0;
+    clear: both;
+}
+
+fieldset div p {
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 1em;
+    width: 43em;
+}
+
+label {
+    float: left;
+    width: 10em;
+    text-align: right;
+    margin-right: 1em;
+}
+
+label.error {
+    float: none;
+    color: red;
+    padding-left: .5em;
+    vertical-align: top;
+}
+
+label span {
+    color: #ff0000;
+}
+
+legend {
+    color: #0b77b7;
+    font-size: 1.2em;
+}
+
+legend span {
+    width: 10em;
+    text-align: right;
+}
+
+legend span span {
+    color: #ff0000;
+    padding: 0 0 0 4px;
+}
+
+img {
+    padding: 0 0 0 40px;
+    width: 200px;
+    height: 80px;
+
+}
+
+input {
+    padding: 0.15em;
+    width: 14em;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    font: bold 0.95em arial, sans-serif;
+    -moz-border-radius: 0.4em;
+    -khtml-border-radius: 0.4em;
+}
+
+input:hover, input:focus {
+    border-color: #c5c5c5;
+    background: #f6f6f6;
+}
+
+textarea {
+    padding: 0.15em;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    font: bold 0.95em arial, sans-serif;
+    -moz-border-radius: 0.4em;
+    -khtml-border-radius: 0.4em;
+}
+
+textarea:hover, textarea:focus {
+    border-color: #c5c5c5;
+    background: #f6f6f6;
+}
+
+select {
+    padding: 0.15em;
+    width: 14em;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    font: bold 0.95em arial, sans-serif;
+    -moz-border-radius: 0.4em;
+    -khtml-border-radius: 0.4em;
+}
+
+select:hover, select:focus {
+    border-color: #c5c5c5;
+    background: #f6f6f6;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 0.5em 0.5em;
+}
+
+.radio, .date {
+    position: relative;
+}
+
+.radio fieldset, .date fieldset {
+    border: none;
+    padding: 1px 0 0 11em;
+}
+
+.radio legend, .date legend {
+    font-size: 1em;
+    color: #000;
+}
+
+.radio legend span, .date legend span {
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    width: 10em;
+    display: block;
+}
+
+.radio label, .radio input {
+    vertical-align: middle;
+    display: inline;
+    float: none;
+    background: none;
+    border: none;
+}
+
+.radio div {
+    float: left;
+    white-space: nowrap;
+    clear: none;
+}
+
+.radio fieldset div label.error {
+    float: right;
+    color: red;
+    padding-left: .5em;
+    vertical-align: top;
+}
+
+input.default {
+    color: #bbb;
+}
+
+#btn input {
+    background-color: #2ae;
+    color: white;
+    margin-right: 20px;
+    margin-top: 25px;
+    float: left;
+    width: 70px;
+}
+
+/*
+#rightbtn button {
+   background-color: #2ae;
+   color: white;
+   margin-right: 20px;
+   margin-top: 25px;
+
+   float: right;
+   width: 70px;
+}
+
+#rightbtn button:hover {
+   background-color: #444;
+} */
+
+#btn input:hover {
+    background-color: #444;
+}
+
+#message {
+    margin-bottom: 10em;
+
+}
+
+#message span {
+    color: #444;
+    font-size: 20px;
+    margin: 3em 1em 0em 9em;
+
+}
+
+#message p {
+
+    color: #444;
+    font-size: 2em;
+    margin: 3em 3em 0em 3em;
+
+}
+
+#err {
+    color: red;
+    margin-left: 1em;
+}
+
+#notify {
+    color: #778899;
+
+}
+
+
