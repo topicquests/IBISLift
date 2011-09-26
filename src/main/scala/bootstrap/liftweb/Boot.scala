@@ -11,12 +11,12 @@ import Loc._
 import mapper._
 import net.liftweb.sitemap.Loc
 import net.liftweb.http.TemplateFinder
-import org.topicquests.db.{DBVendorMySQL, DBVendorRedis}
+import org.topicquests.db.{DBVendorMySQL}
 import org.topicquests.dispatcher.ImageDispatcher
-import com.redis._
 import org.topicquests._
 import model._
 import snippet._
+import org.topicquests.util.ConversationHelper
 
 /**
  * A class that's instantiated early and run.  It allows the application
@@ -30,12 +30,16 @@ class Boot extends Loggable {
     // Use HTML5 for rendering
     LiftRules.htmlProperties.default.set((r: Req) => new Html5Properties(r.userAgent))
 
+    //Check db properties
+    Props.requireOrDie("db.type")
+
     //create the database
-    println("STARTING "+Props.get("db.type"))
+    logger.info("STARTING "+Props.get("db.type"))
+
     //Property options
     //db.type = h2
     //db.type = mysql
-    var dbtype = Props.get("db.type").open_! // open_! is dangerous!!!
+    var dbtype = Props.get("db.type").open_! // prop existance already checked
 
     if (dbtype.equals("h2")) {
       val vendor =
@@ -49,22 +53,22 @@ class Boot extends Loggable {
       DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
     } else if (dbtype.equals("mysql")) {
       //Sets the MySQL connection
-      DB.defineConnectionManager(DefaultConnectionIdentifier, DBVendorMySQL);	
+      DB.defineConnectionManager(DefaultConnectionIdentifier, DBVendorMySQL);
     } else {
-      println("We're doomed! No database of type: "+dbtype)
+      logger.error("We're doomed! No database of type: "+dbtype)
     }
 
     //REDIS for nodes (optional)
     //db.spec = redis
     //db.spec = none  (or other nosql database)
-    var special = Props.get("db.spec").open_! // very dangerous
+    /*var special = Props.get("db.spec").open_! // very dangerous
     if (special.equals("redis")) {
 	    //connect to Redis
 	    var r: RedisClient = new RedisClient("localhost", 6379)
 	    DBVendorRedis.setDatabase(r)
-	    println("Starting "+r)
-    }
-    
+	    logger.info("Starting "+r)
+    }*/
+
     // Use Lift's Mapper ORM to populate the database
     // you don't need to use Mapper to use Lift... use
     // any ORM you want
@@ -84,7 +88,7 @@ class Boot extends Loggable {
       val umail: String = Props.get("admin.email").open_!
       val upwd: String = Props.get("admin.pwd").open_!
       val unm: String = Props.get("admin.uname").open_!
-      //println("BOOTING "+umail+" "+upwd)
+
       if (isSuperUserExist == false) {
 
         val superUser = User.create
@@ -127,23 +131,75 @@ class Boot extends Loggable {
     val newconTempl = Template({ () => <lift:embed what="newconversation" />})
     val wsexportTempl = Template({ () => <lift:embed what="wsexport" />})
 
-    // Build SiteMap
-    def sitemap = SiteMap(
-      Menu.i("Home") / "index" >> User.AddUserMenusAfter, // Menu.i the simple way to declare a menu
-      Menu.i("conversation") / "conversation" / ** >> Hidden >> conB, //If(() => User.loggedIn_?, conA , conB)
-      //this paints a New Conversation menu item if and only if a user is logged in
-      Menu.i("New Conversation") / "newconversation" >> newconTempl >> Unless(() => !User.loggedIn_?, () => RedirectResponse("index")),
-      Menu.i("WS Export") / "wsexport" / ** >> Hidden >> wsexportTempl,
-      Menu.i("Admin") / "admin"  >> Unless(() => !User.superUser_?, () => RedirectResponse("index"))
-      //TODO add other menus as needed
-      
-    )
+    //Check authentications properties
+    Props.requireOrDie("invite.required")
+    Props.requireOrDie("authentication.required")
 
-    def sitemapMutators = User.sitemapMutator
+    val authRequired = if(Props.get("authentication.required").open_! == "true") true else false
+
+    val AuthCheck = If(() => (User.loggedIn_? || !authRequired), S.?("must.be.logged.in"))
+
+    val adminMenus: List[Menu] =
+    Menu(Loc("Users", "admin" :: "user" :: "list" :: Nil, "Users", User.IfAdmin)) ::
+            Menu(Loc("Add User", "admin" :: "user" :: "add" :: Nil, "Add User", User.IfAdmin)) ::
+        Menu(Loc("Edit User", "admin" :: "user" :: "edit" :: Nil, "Edit User", User.IfAdmin)) ::
+            Invitee.menus;
+
+    // Build SiteMap
+    def menus: List[Menu] =
+      (Menu(Loc("Home", "index" :: Nil, "Home", User.AddUserMenusAfter)) ::
+              Menu(Loc("Conversation", "conversation" :: Nil, "Conversation", Hidden, conB, AuthCheck)) ::
+              Menu(Loc("New Conversation", "newconversation" :: Nil, "New Conversation", newconTempl, User.IfLoggedIn)) ::
+              Menu(Loc("WS Export", "wsexport" :: Nil, "WS Export",  Hidden, wsexportTempl, AuthCheck)) ::
+              Menu(Loc("Admin", "admin" :: "index" :: Nil, "Admin", User.IfAdmin), adminMenus : _*) ::
+              Nil) ::: User.menus;
+    //TODO add other menus as needed
 
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
-    LiftRules.setSiteMapFunc(() => sitemapMutators(sitemap))
+    LiftRules.setSiteMap(SiteMap(menus:_*))
+
+
+    //Rewrites
+    LiftRules.statefulRewrite.append {
+      case RewriteRequest(ParsePath("conversation" :: conversationId :: Nil, _, _, _), _, _) => {
+        val map = Map[String,String]("id" -> conversationId);
+        RewriteResponse("conversation" :: Nil, map)
+      }
+      case RewriteRequest(ParsePath("wsexport" :: conversationId :: Nil, _, _, _), _, _) => {
+        val map = Map[String,String]("id" -> conversationId);
+        RewriteResponse("wsexport" :: Nil, map)
+      }
+      case RewriteRequest(ParsePath("admin" :: "user" :: "add" :: Nil, _, _, _), _, _) => {
+        RewriteResponse("admin" :: "user" :: "edit" :: Nil)
+      }
+      case RewriteRequest(ParsePath("admin" :: "user" :: "edit" :: uniqueId :: Nil, _, _, _), _, _) => {
+        val map = Map[String,String]("uniqueId" -> uniqueId);
+        RewriteResponse("admin" :: "user" :: "edit" :: Nil, map)
+      }
+    }
+
+
+    //Rewrites
+    LiftRules.statelessDispatchTable.append {
+      case Req("wsexport" :: conversationId :: Nil, _, GetRequest) =>
+        () => {  IBISConversation.find(By(IBISConversation.id, conversationId.toLong)) match {
+          case Full(conversation) => {
+            val bytes = ConversationHelper.exportConversation(conversation).getBytes
+            Full(StreamingResponse(
+              new java.io.ByteArrayInputStream(bytes),
+              () => {},
+              bytes.length,
+              ("Content-type" -> "application/json") :: ("Content-length" -> bytes.length.toString) :: ("Content-disposition" -> ("attachment; filename=conversation" + conversationId.toString + ".json")) :: Nil,
+              Nil,
+              200
+            ))
+          }
+          case _ => Full(NotFoundResponse())
+        }
+      }
+    }
+
 
     // Use jQuery 1.4
     LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQuery14Artifacts
@@ -163,7 +219,7 @@ class Boot extends Loggable {
     LiftRules.loggedInTest = Full(() => User.loggedIn_?)
 
     // Make a transaction span the whole HTTP request
- //   S.addAround(DB.buildLoanWrapper)
+    //   S.addAround(DB.buildLoanWrapper)
 
     //Messages auto fade
     LiftRules.noticesAutoFadeOut.default.set((noticeType: NoticeType.Value) => Full((3 seconds, 2 seconds)))
@@ -173,4 +229,3 @@ class Boot extends Loggable {
 
   }
 }
- 

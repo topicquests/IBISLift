@@ -6,6 +6,8 @@ package org.topicquests.model
 import net.liftweb._
 import mapper._
 import common._
+import proto.Crudify
+
 /**
  * @author park
  * <p>An Invitee is an email address entered by an Admin. If someone
@@ -21,16 +23,12 @@ class Invitee extends LongKeyedMapper[Invitee] with IdPK {
 
 }
 
-object Invitee extends Invitee with LongKeyedMetaMapper[Invitee] {
+object Invitee extends Invitee with LongKeyedMetaMapper[Invitee] with CRUDify[Long, Invitee] {
     override def dbTableName = "invitees" // define the DB table name
+
+    override def addlMenuLocParams = List(User.IfAdmin)
 
     def findByEmail (email: String) : Box[Invitee] =
     	Invitee.find(By(Invitee.email, email))
 
-    	//TODO: removeEmail
-    	//The theory is that once someone signs up, delete the invite
-    def removeEmail(email: String) {
-      //TODO
-      
-    }
 }

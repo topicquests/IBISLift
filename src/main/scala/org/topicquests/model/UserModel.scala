@@ -12,11 +12,10 @@ import scala.collection.immutable.List
 object UserModel {
 
   /**
-   * List users in support of an Admin user manager function
+   * List user in support of an Admin user manager function
    */
   def list(in: NodeSeq) = {
     	val users: List[User] = User.findAll()
-    			//    println("XXXX "+convs)
     	bindUsers(users,in)
   }
     

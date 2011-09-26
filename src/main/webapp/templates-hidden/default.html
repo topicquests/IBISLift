@@ -25,7 +25,7 @@
 
 .sidebar ul li {
 	margin:0;
-	padding:0;
+	padding: 0 0 0 10px;
 	list-style:none;
 	border:1px solid #ccc;
 	border-bottom:none;
@@ -55,6 +55,14 @@
   </head>
   <body>
     <div style="align: left"><a href="/"><img src="/images/TQ9.gif" /></a></div>
+    <noscript>
+        <style type="text/css">
+            .container {display:none;}
+        </style>
+        <div style="margin:20px;width:400px;font-size:16px;font-family: sans-serif;font-weight: bold;font-size;border: 3px solid #527BBD;">
+        You don't have javascript enabled in your browser. Please enable it and refresh the page to continue.
+        </div>
+    </noscript>
     <div class="container">
       <div class="column span-12 last" style="text-align: right">
         <img alt="" id="ajax-loader" style="display:none; margin-bottom: 0px; margin-left: 5px" src="/images/ajax-loader.gif"/>
@@ -74,6 +82,8 @@
       <div class="column span-17 last">
         <div id="content">The main content will get bound here</div>
       </div>
+
+
 
       <hr />
       <!-- footer -->

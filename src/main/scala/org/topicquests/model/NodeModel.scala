@@ -4,11 +4,13 @@
 package org.topicquests.model
 import java.util.Date
 import org.topicquests.dispatcher.NodeEventDispatcher
+import net.liftweb.common.Loggable
+
 /**
  * @author park
  * <p>A class to form a Node API</p>
  */
-class NodeModel {
+class NodeModel extends Loggable {
 
   /**
    * <p>Create a node; does not deal with parent or child nodes</p>
@@ -37,7 +39,7 @@ class NodeModel {
   }
   
   def updateNode(nodetype: String, label: String, details: String, user: User, node: org.topicquests.model.Node) = {
-	  println("UPDATING "+nodetype)
+	  logger.info("UPDATING "+nodetype)
     var date: Date = new Date()
     node.label(label)
     node.details(details)
@@ -71,7 +73,7 @@ class NodeModel {
     }
   }
   def nodeTypeToImage(nt: String): String = {
-    println("AAAAA "+nt)
+    logger.info("AAAAA "+nt)
     try {
       nt match {
         case "Question" => "issue.png"

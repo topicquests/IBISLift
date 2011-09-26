@@ -1,7 +1,7 @@
 package org.topicquests.snippet
 
 import net.liftweb._
-import common.Full
+import common.{Loggable, Logger, Full}
 import org.topicquests.model.{SessionActiveConversation, ChatLine, User}
 import http._
 import js.JsCmd
@@ -12,18 +12,26 @@ import net.liftweb.http.SHtml
 import http.js.JsCmds._
 import org.topicquests.template.ChatTemplate
 import org.topicquests.comet.{FullChatLine, ChatCometServer}
-import org.topicquests.util.DateHelper
+import org.topicquests.util.{LongHelper, DateHelper}
 
 /**
  * @author dfernandez
  *
  */
 
-class Chat {
+class Chat extends Loggable  {
 
+  /**
+   * Loads the last chat lines
+   * 
+   * @return CssBind
+   */
   def loadChat() = {
-    val y: List[String] = S.request.open_!.path.partPath
-    val conversationId = y.last.toLong
+    //If no conversation id param it redirects you to the homepage
+    val conversationId = S.param("id") match {
+     case Full(id) if(LongHelper.validateLong(id)) => id.toLong
+     case _ => S.redirectTo("/")
+    }
     val list = ChatLine.getLastLines(conversationId)
     if(list.size>0){
     "#message" #> (list.reverse.map(chatLine => {
@@ -31,7 +39,7 @@ class Chat {
       "*" #> ChatTemplate.getXHTML(new FullChatLine(chatLine.conversation.is,
         chatLine.chat.is,
         user.fullName,
-        DateHelper.chatDate.format(chatLine.createdDate.is).capitalize,
+        chatLine.createdDate.is.getTime.toString,
         {if(user.picture.obj.isDefined) user.picture.obj.open_!.imageUrl else "/images/userimage.png"}
       ))
     }))
@@ -41,8 +49,12 @@ class Chat {
     }
   }
 
-  def prepare() = {
-    
+  /**
+   * Prepares the chat input which after sumit send a chatline object to the ChatCometServer
+   *
+   * @return CssBind
+   */
+  def prepare() = {    
     if(User.loggedIn_?){
       "#chatinput" #> SHtml.onSubmit(msg => {
         SessionActiveConversation.is match {
@@ -58,14 +70,22 @@ class Chat {
     else {
       "#chatform" #> <div><b>To participate you must be <a href="/login">logged in</a></b></div>
     }
-
   }
 
-
+  /**
+   * Submits chat form Javascript function
+   *
+   * @return JsCmd Function
+   */
   def getsubmitchat(): JsCmd = {
     Function("submitchat", List(), SHtml.submitAjaxForm("chatform"))    
   }
 
+  /**
+   * Bind method that adds javascript functions
+   *
+   * @return CSSBind
+   */
   def setscripts() = {
     val sc1 = getsubmitchat();
     "*" #> Script(sc1)

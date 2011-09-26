@@ -16,7 +16,7 @@ class ChatLine extends LongKeyedMapper[ChatLine] with IdPK {
   object user extends MappedLongForeignKey(this, User)
   object chat extends MappedText(this)  
   object createdDate extends MappedDateTime(this){
-    override def defaultValue = new Date(Helpers.millis)
+    override def defaultValue = new Date()
     override def dbIndexed_? = true
   }
 

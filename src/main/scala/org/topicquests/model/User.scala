@@ -15,10 +15,12 @@ import scala.xml.NodeSeq
 import js._
 import JsCmds._
 import org.topicquests.util.{ImageHelper, CleanField}
-//The session object SessionActiveConversation keeps the users active conversations.
+
+
+//The session object SessionActiveConversation keeps the user active conversations.
 object SessionActiveConversation extends SessionVar[Box[Long]](Empty)
 
-//The session object sessionActiveNodes keeps the users active nodes. It is clear when the user changes the conversation.
+//The session object sessionActiveNodes keeps the user active nodes. It is clear when the user changes the conversation.
 object SessionActiveNodes extends SessionVar[Box[HashSet[Long]]](Empty)
 
 
@@ -67,6 +69,8 @@ class User extends MegaProtoUser[User] {
  */
 object User extends User with MetaMegaProtoUser[User] {
 
+
+
   val IfLoggedIn = If(() => loggedIn_?, S.?("must.be.logged.in"))
   val IfAdmin = If(() => loggedIn_? && superUser_?, "must.be.admin")
 
@@ -98,6 +102,12 @@ object User extends User with MetaMegaProtoUser[User] {
   def findByUserName (userName: String) : Box[User] =
     User.find(By(User.userName, userName))
 
+   def findByUniqueId (uniqueId: String) : Box[User] =
+    User.find(By(User.uniqueId, uniqueId))
+
+  def findByEmail (email: String) : Box[User] =
+    User.find(By(User.email, email))
+
   override def userNameFieldString: String = S.??("username").capitalize
   def EmailFieldString: String = S.??("email.address")
 
@@ -128,10 +138,8 @@ object User extends User with MetaMegaProtoUser[User] {
     val redirAfterLogin = homePage
 
     def internalLogin() = {
-      S.param("username").
-              flatMap(username => findByUserName(username)) match {
-        case Full(user) if user.validated_? &&
-                user.testPassword(S.param("password")) => {
+      S.param("username").flatMap(username => findByUserName(username)) match {
+        case Full(user) if user.validated_? && user.testPassword(S.param("password")) => {
           val preLoginState = capturePreLoginState()
           logUserIn(user, () => {
             S.notice(S.??("logged.in"))
@@ -139,11 +147,23 @@ object User extends User with MetaMegaProtoUser[User] {
             S.redirectTo(redirAfterLogin)
           })
         }
-
         case Full(user) if !user.validated_? =>
           S.error(S.??("account.validation.error"))
-
-        case _ => S.error(S.??("invalid.credentials"))
+        case _ => {
+          S.param("username").flatMap(email => findByEmail(email)) match {
+            case Full(user) if user.validated_? && user.testPassword(S.param("password")) => {
+              val preLoginState = capturePreLoginState()
+              logUserIn(user, () => {
+                S.notice(S.??("logged.in"))
+                preLoginState()
+                S.redirectTo(redirAfterLogin)
+              })
+            }
+            case Full(user) if !user.validated_? =>
+              S.error(S.??("account.validation.error"))
+            case _ => S.error(S.??("invalid.credentials"))
+          }
+        }
       }
     }
 
@@ -212,6 +232,19 @@ object User extends User with MetaMegaProtoUser[User] {
     var photoFileHolder : Box[FileParamHolder] = Empty
 
     def testSignup() {
+
+      val invitationRequired = if(Props.get("invite.required").open_! == "true") true else false
+
+      val boxInv = if(invitationRequired){
+        Invitee.findByEmail(theUser.email.is) match {
+          case Full(inv) => Full(inv)
+          case _ => S.error("There is no invitation for the email you entered") ; S.redirectTo("/");
+        }
+      }
+      else {
+        Empty
+      }
+
       val fileOk = photoFileHolder match {
         case Full(FileParamHolder(_, null, _, _)) => true
         case Full(FileParamHolder(_, mime, _, data))  if mime.startsWith("image/") => {
@@ -233,7 +266,11 @@ object User extends User with MetaMegaProtoUser[User] {
 
       (fileOk, validateSignup(theUser)) match {
         case (true,Nil) =>
-          actionsAfterSignup(theUser, () => S.redirectTo(homePage))
+          actionsAfterSignup(theUser, () => {
+            if(boxInv.isDefined) //Deletes the invitation
+              boxInv.open_!.delete_!
+            S.redirectTo(homePage);
+          })
 
         case (_,xs) => S.error(xs) ; signupFunc(Full(innerSignup _))
       }

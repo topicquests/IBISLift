@@ -13,6 +13,9 @@ import net.liftweb.common.{Box, Empty, Full}
  */
 
 
+/**
+ * Trait for MapperFields that want to have a single clean value, eg. username
+ */
 trait CleanField extends FieldIdentifier{
   def valClean(msg: => String)(value: String): List[FieldError] =
     if(value == clean(value))

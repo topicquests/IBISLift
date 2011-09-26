@@ -39,10 +39,6 @@ class ConversationComet extends CometActor with CometListener {
            this.partialUpdate(OnLoad((JqJE.Jq("#node_" + parentUniqueId + " > ul > div") ~> JqJE.JqAppend(NodeTemplate.getXHTML(node))).cmd))
         }
       }
-      
-      /*val sessionId = S.session.open_!.uniqueId
-      if(sessionId != drawPointAction.sessionId)
-        this.partialUpdate(OnLoad(JsRaw("updatepoints(" + write(drawPointAction.pbUpdate.updates)  + ")").cmd))*/
     }
   }
 

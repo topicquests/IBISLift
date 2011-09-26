@@ -37,6 +37,8 @@
 
             });
 
+            $('.time-formatted').each(function (i) {toLocalDate($(this)); $(this).removeClass('time-formatted');});
+
             $( "#tabs" ).tabs();
 
              scrollBottom();
@@ -57,6 +59,26 @@
         function scrollBottom(){
           var height = $('#chat').height();
           $('.chat-messages-container').animate({scrollTop: height}, 500);
+        }
+
+        var months = new Array(12);
+        months[0] = "Jan";
+        months[1] = "Feb";
+        months[2] = "Mar";
+        months[3] = "Apr";
+        months[4] = "May";
+        months[5] = "Jun";
+        months[6] = "Jul";
+        months[7] = "Aug";
+        months[8] = "Sep";
+        months[9] = "Oct";
+        months[10] = "Nov";
+        months[11] = "Dec";
+
+        function toLocalDate($date){
+            var date = new Date(parseFloat($date.html()));
+            var dateStr = months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes();
+            $date.html(dateStr);
         }
 
          //]]>

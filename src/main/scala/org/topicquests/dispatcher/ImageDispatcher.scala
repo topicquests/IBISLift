@@ -14,6 +14,7 @@ import org.topicquests.model.Image
 
 object ImageDispatcher {
 
+  //Loads the image with the Id
   object DBImage {
     def unapply(id: String): Option[Image] = {
       val boximg = Image.find(By(Image.uniqueId, id.trim))
@@ -24,11 +25,13 @@ object ImageDispatcher {
     }
   }
 
+  //Matches the request
   def matcher: LiftRules.DispatchPF = {
     case req @ Req("image" :: DBImage(img) :: Nil, _, GetRequest) =>
       () => serveImage(img, req)
   }
 
+  //Serves the image with a InMemoryResponse
   def serveImage(image: Image, req: Req) : Box[LiftResponse] = {
     //TODO: see how to avoid serving image twice
       Full(InMemoryResponse(

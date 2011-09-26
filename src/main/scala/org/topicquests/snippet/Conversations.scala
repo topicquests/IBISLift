@@ -19,15 +19,44 @@ import java.util.Date
 import org.topicquests.comet.{ConversationCometServer, AddNodeAction}
 import net.liftweb.http.js.JsCmds._
 import org.topicquests.model.NodeModel
+import js.jquery.JqJE
+
 /**
  * @author park
  *
  */
-class Conversations  {
-	//used for Node creation
-	var model: NodeModel = new NodeModel()
-	
-	
+
+
+/**
+ * 	load a conversation from database
+ * @param id
+ */
+case class ConversationLoc(id: String) {
+  lazy val record: IBISConversation = {
+    IBISConversation.find(By(IBISConversation.id, id.toLong)).open_!
+  }
+}
+
+/**
+ * Fetch a particular node
+ * @param id
+ */
+case class IBISNodeLoc(id: Long) {
+  lazy val record: org.topicquests.model.Node = {
+    org.topicquests.model.Node.find(By(org.topicquests.model.Node.id, id)).open_!
+  }
+}
+
+class Conversations extends Loggable {
+
+  //used for Node creation
+  var model: NodeModel = new NodeModel()
+
+  /**Creates the bindings for the edit node form
+    * @param in  the xml to be transformed
+   * @return the xml transformed
+   *
+   */
   def updatenode(in: NodeSeq) : NodeSeq = {
     var label = ""
     var details = ""
@@ -36,31 +65,29 @@ class Conversations  {
     var x = "-1"
 
     var parentId: Long = -1
-      try {
-        //this will fail when the user is not logged in
-        //but in that case, we are not painting the response form anyway
-        x = S.get("nodeid").openTheBox
-        parentId = x.toLong
-      } catch {
-        case exc : Exception => {
-          //do nothing
-        }
+    try {
+      //this will fail when the user is not logged in
+      //but in that case, we are not painting the response form anyway
+      x = S.get("nodeid").openTheBox
+      parentId = x.toLong
+    } catch {
+      case exc : Exception => {
+        //do nothing
+      }
     }
     // grab the node
     var thenode: org.topicquests.model.Node = IBISNodeLoc(parentId).record
     nodetype = thenode.nodetype.toString()
     label = thenode.label.toString()
     details = thenode.details.toString()
-    
+
     def process(): JsCmd = {
-      println("STARTING PARENT ID "+x+" "+nodetype)
+      logger.info("STARTING PARENT ID "+x+" "+nodetype)
       User.currentUser match {
         case Full(user) =>  {
           model.updateNode(nodetype,label,details, user, thenode)
           S.notice("Edit saved")
-          //Clears the inputs -- this is an edit; not sure we want to clear them in case
-          //the user changes mind before moving on
-          //JsRaw("$('#editlabel').val('')").cmd & JsRaw("$('#editdetails').val('')")
+          JqJE.Jq("#node_" + thenode.uniqueId + " > .nodehref > .nodetitle") ~> JqJE.JqHtml(Text(label))
         }
         case _ => Noop;
       }
@@ -72,21 +99,23 @@ class Conversations  {
       nodetype = _ )
 
     SHtml.ajaxForm(
-	    bind("editentry", in,
-	      "question" -> radios(0),
-	      "idea" -> radios(1),
-	      "pro" -> radios(2),
-	      "con" -> radios(3),
-	      "ref" -> radios(4),
-	      "label" -> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "editlabel"),
-	      "details" -> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "editdetails"),
-	      "submit" -> SHtml.ajaxSubmit("Respond", process)
-	      )
-	    )    }	
-  /**
-   * Add a node to a given conversation
-   * @param in
-   * @return NodeSeq
+      bind("editentry", in,
+        "question" -> radios(0),
+        "idea" -> radios(1),
+        "pro" -> radios(2),
+        "con" -> radios(3),
+        "ref" -> radios(4),
+        "label" -> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "editlabel"),
+        "details" -> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "editdetails"),
+        "submit" -> SHtml.ajaxSubmit("Save", process)
+        )
+      )    }
+
+
+  /**Creates the bindings for the response node form
+    * @param in  the xml to be transformed
+   * @return the xml transformed
+   *
    */
   def addresponse(in: NodeSeq) : NodeSeq = {
     var label = ""
@@ -108,7 +137,7 @@ class Conversations  {
           //do nothing
         }
       }
-      println("STARTING PARENT ID "+x+" "+nodetype)
+      logger.info("STARTING PARENT ID "+x+" "+nodetype)
       User.currentUser match {
         case Full(user) =>  {
           doRespond(nodetype,label,details,parentId, user)
@@ -126,24 +155,26 @@ class Conversations  {
       nodetype = _ )
 
     SHtml.ajaxForm(
-	    bind("entry", in,
-	      "question" -> radios(0),
-	      "idea" -> radios(1),
-	      "pro" -> radios(2),
-	      "con" -> radios(3),
-	      "ref" -> radios(4),
-	      "label" -> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resplabel"),
-	      "details" -> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "respdetails"),
-	      "submit" -> SHtml.ajaxSubmit("Respond", process)
-	      )
-	    )
+      bind("entry", in,
+        "question" -> radios(0),
+        "idea" -> radios(1),
+        "pro" -> radios(2),
+        "con" -> radios(3),
+        "ref" -> radios(4),
+        "label" -> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resplabel"),
+        "details" -> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "respdetails"),
+        "submit" -> SHtml.ajaxSubmit("Respond", process)
+        )
+      )
   }
-	
+
   /**
    * Driven by a form on the front page for New Conversation
+   *
+   * @param in  the xml to be transformed
+   * @return the xml transformed
    */
   def addnewconversation(in: NodeSeq) : NodeSeq = {
-    //  println("ADDING "+in)
 
     var title = ""
     var label = ""
@@ -151,7 +182,7 @@ class Conversations  {
     var nodetype = ""
 
     def process() {
-      println("STARTING")
+      logger.info("STARTING")
       User.currentUser match {
         case Full(user) =>  doAdd(title,nodetype,label,details,user)
         case _ => Text("No user available")
@@ -185,28 +216,16 @@ class Conversations  {
 
   }
 
-  
-  /**
-   * Fetch a particular node
-   * @param id
-   */
-  case class IBISNodeLoc(id: Long) {
-    lazy val record: org.topicquests.model.Node = {
-      org.topicquests.model.Node.find(By(org.topicquests.model.Node.id, id)).open_!
-    }
-  }
-
-
   /**
    * Here when a user responds to a node, called from <code>addresponse</code>
-   * @param nodetype
-   * @param label
-   * @param details
-   * @param parentId
-   * @param user
+   * @param nodetype  the type of the node
+   * @param label     the label of the node
+   * @param details   the details of the node
+   * @param parentId  the id of the parent node
+   * @param user      the user who created it
    */
   def doRespond(nodetype: String, label: String, details: String, parentId: Long, user: User) = {
-    println("PROCESSING "+label+" "+nodetype+" "+parentId)
+    logger.info("PROCESSING "+label+" "+nodetype+" "+parentId)
     var date: Date = new Date()
     var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,user)
     var parentUniqueId = ""
@@ -216,17 +235,19 @@ class Conversations  {
       parentUniqueId = nx.uniqueId.is
       //set node's parent
       node.parent(nx)
+      //set's the conversation
+      node.conversation(nx.conversation.obj)
       //add child to parent
       var snappers: List[org.topicquests.model.Node] = nx.children.toList
       //These printlins do, indeed, show the node has children
       //but PROCESSING-BB doesn't show the added child.
       //you see it in the next PROCESSING-AA -- when another child is added
       //NOT SURE WHY THAT HAPPENS
-      //println("PROCESSING-AA "+snappers)
+      //logger.info("PROCESSING-AA "+snappers)
       snappers :+ node
-      // println("PROCESSING-BB "+snappers)
+      // logger.info("PROCESSING-BB "+snappers)
       nx.save()
-      //	  println("PROCESSING-XX "+nx)
+      //	  logger.info("PROCESSING-XX "+nx)
     }
     //still need to know how this plays out
     node.save()
@@ -234,16 +255,24 @@ class Conversations  {
     //Updates all comets listeners
     ConversationCometServer ! new AddNodeAction(parentId, parentUniqueId, node)
   }
+
   /**
    * Heavy lifting of creating an IBISConversation
+   *
+   * @param title the title of the node
+   * @param nodetype the type of the node
+   * @param label the label of the node
+   * @param details the details of the node
+   * @param user  the user who created it
+   *
    */
   def doAdd(title: String, nodetype: String, label: String, details: String, user: User) = {
-    println("PROCESSING "+title+" "+nodetype)
+    logger.info("PROCESSING "+title+" "+nodetype)
     //make the root node
     var date: Date = new Date()
     var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,user)
     node.save()
-    println("PROCESSING-2 "+node)
+    logger.info("PROCESSING-2 "+node)
     //make the conversation itself
     //technically speaking, this is really a Map node
     //TODO upgrade from Conversation to Map nodetype
@@ -254,7 +283,10 @@ class Conversations  {
     conversation.lastdate(date)
     conversation.rootnodeid(node)
     conversation.save()
-    println("PROCESSED "+conversation.id)
+    logger.info("PROCESSED "+conversation.id)
+
+    //Adds the conversation to the node object
+    node.conversation(conversation).save()
   }
 
   /**
@@ -263,7 +295,7 @@ class Conversations  {
    */
   def list(in: NodeSeq) = {
     val convs: List[IBISConversation] = IBISConversation.findAll()
-    //    println("XXXX "+convs)
+    //    logger.info("XXXX "+convs)
     bindMessages(convs,in)
   }
 

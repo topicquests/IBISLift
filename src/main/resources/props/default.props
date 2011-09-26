@@ -5,7 +5,7 @@ admin.uname = testadmin
 invite.required = true
 authentication.required = false
 
-db.type = h2
+db.type = mysql
 db.spec = none
 
 db.server = localhost
@@ -17,4 +17,3 @@ db.pass = mypass321
 
 max.chat.rows = 30
 
-url.base = http://localhost:8080/

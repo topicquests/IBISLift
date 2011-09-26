@@ -19,19 +19,20 @@ import net.liftweb.http.js.JsCmds.OnLoad
 
 class ChatComet extends CometActor with CometListener {
 
-  private var msgs: Vector[String] = Vector()
-
   //Register as a listener with the ChatCometServer
   def registerWith = ChatCometServer
 
+  //No pre render needed
   def render = <br/>
 
-  //proccess messages
+  //Proccess messages
   override def lowPriority = {
     case fullChatLine: FullChatLine => {
       SessionActiveConversation.is match {
         case Full(conversationId) if(conversationId == fullChatLine.conversastionId) => {
-          this.partialUpdate(OnLoad((JqJE.Jq("#chat") ~> JqJE.JqAppend(ChatTemplate.getXHTML(fullChatLine))).cmd & JsRaw("scrollBottom();").cmd))
+          this.partialUpdate(OnLoad((JqJE.Jq("#chat") ~> JqJE.JqAppend(ChatTemplate.getXHTML(fullChatLine))).cmd &
+                  JsRaw("$('.time-formatted').each(function (i) {toLocalDate($(this)); $(this).removeClass('time-formatted');});scrollBottom();").cmd)
+            )
         }
         case _ =>
       }
