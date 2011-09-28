@@ -5,6 +5,7 @@ import net.liftweb.mapper._
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  */
 
 class Image  extends LongKeyedMapper[Image] with IdPK {

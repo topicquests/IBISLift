@@ -9,6 +9,7 @@ import org.topicquests.model.Image
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  */
 
 

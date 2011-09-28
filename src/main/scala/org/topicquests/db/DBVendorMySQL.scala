@@ -7,6 +7,7 @@ import net.liftweb.util.Props
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  *
  */
 

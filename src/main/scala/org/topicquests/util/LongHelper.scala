@@ -5,6 +5,7 @@ import java.text.DecimalFormat
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  *
  */
 

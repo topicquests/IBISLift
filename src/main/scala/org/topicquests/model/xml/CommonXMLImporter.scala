@@ -15,6 +15,7 @@ import org.topicquests.model.{NodeModel, Node}
 
 /**
  * @author park
+ * @license Apache2.0
  * <p>A class to import from the Compendium DTD</p>
  * <p>Sources of XML files:
  * <li>from an uploaded file</li>

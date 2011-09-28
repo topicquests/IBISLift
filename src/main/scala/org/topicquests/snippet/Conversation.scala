@@ -24,6 +24,7 @@ import org.topicquests.util.LongHelper
 
 /**
  * @author park
+ * @license Apache2.0
  *
  */
 

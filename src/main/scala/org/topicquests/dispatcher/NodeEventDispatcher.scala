@@ -5,6 +5,7 @@ package org.topicquests.dispatcher
 
 /**
  * @author park
+ * @license Apache2.0
  * <p> In which we create a dispatcher to serve notices of new node events</p>
  */
 object NodeEventDispatcher {

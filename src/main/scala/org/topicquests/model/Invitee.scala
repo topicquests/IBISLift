@@ -10,6 +10,7 @@ import proto.Crudify
 
 /**
  * @author park
+ * @license Apache2.0
  * <p>An Invitee is an email address entered by an Admin. If someone
  * tries to sign in and they are not on the Invitee list, and the list is required,
  * then a polite error message is painted. Otherwise, the user is allowed to sign in.</p>

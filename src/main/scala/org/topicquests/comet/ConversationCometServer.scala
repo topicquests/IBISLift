@@ -7,11 +7,14 @@ import net.liftweb.http.{SessionVar, ListenerManager}
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  *
  */
 
 //Messages to the comet to add a Node
 case class AddNodeAction(parentId: Long, parentUniqueId: String, node: Node)
+//Messages to the comet to edit a Node
+case class EditNodeAction(node: Node)
 
 object ConversationCometServer  extends LiftActor with ListenerManager {
 
@@ -22,6 +25,10 @@ object ConversationCometServer  extends LiftActor with ListenerManager {
    override def highPriority = {
     case addNodeAction: AddNodeAction =>{         
       action = addNodeAction;
+      updateListeners();
+    }
+    case editNodeAction: EditNodeAction =>{
+      action = editNodeAction;
       updateListeners();
     }
    }

@@ -14,6 +14,7 @@ import net.liftweb.http.js.JsCmds.OnLoad
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  *
  */
 

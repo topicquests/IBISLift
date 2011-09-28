@@ -6,6 +6,7 @@ import net.liftweb.mapper._
 import net.liftweb.common._
 /**
  * @author park
+ * @license Apache2.0
  *
  */
 

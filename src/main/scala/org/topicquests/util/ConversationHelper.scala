@@ -8,6 +8,7 @@ import net.liftweb.common.Loggable
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  */
 object ConversationHelper extends Loggable {
 

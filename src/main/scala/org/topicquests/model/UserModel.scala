@@ -7,6 +7,7 @@ import scala.collection.immutable.List
 
 /**
  * @author park
+ * @license Apache2.0
  *
  */
 object UserModel {

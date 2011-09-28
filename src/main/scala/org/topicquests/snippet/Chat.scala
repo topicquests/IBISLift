@@ -16,6 +16,7 @@ import org.topicquests.util.{LongHelper, DateHelper}
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  *
  */
 

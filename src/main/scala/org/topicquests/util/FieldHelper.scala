@@ -10,6 +10,7 @@ import net.liftweb.common.{Box, Empty, Full}
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  */
 
 

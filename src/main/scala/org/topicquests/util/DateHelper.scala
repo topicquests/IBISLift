@@ -6,6 +6,7 @@ import net.liftweb.common.{Box, Full, Empty}
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  */
 
 

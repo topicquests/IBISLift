@@ -7,6 +7,7 @@ import scala._
 
 /**
  * @author park
+ * @license Apache2.0
  * <p>A class to export to the Compendium DTD</p>
  * <p>This turns out to be non-trivial</p>
  * <p>The open issue is where to do the exporting:

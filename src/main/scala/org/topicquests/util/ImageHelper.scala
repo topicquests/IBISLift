@@ -24,6 +24,7 @@ import net.liftweb.common.{Empty, Full, Box}
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  */
 
  object ImageOutFormat extends Enumeration("png", "jpg", "ico"){

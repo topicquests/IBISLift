@@ -10,6 +10,7 @@ import scala._
 import scala.collection.mutable.StringBuilder
 /**
  * @author park
+ * @license Apache2.0
  * @see http://www.assembla.com/spaces/liftweb/wiki/Mapper for information on
  * linking parent and child nodes
  * <p><em>Node</em> is intended to be used for all sorts of nodes in

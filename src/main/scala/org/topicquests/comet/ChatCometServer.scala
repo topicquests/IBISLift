@@ -7,6 +7,7 @@ import org.topicquests.util.DateHelper
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  *
  */
 

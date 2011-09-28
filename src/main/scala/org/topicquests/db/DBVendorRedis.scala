@@ -7,6 +7,7 @@ import scala._
 
 /**
  * @author park
+ * @license Apache2.0
  * <p>Provide a simple interface to RedisClient</p>
  *//*
 object DBVendorRedis {

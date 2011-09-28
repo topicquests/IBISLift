@@ -8,6 +8,7 @@ import net.liftweb.common.Loggable
 
 /**
  * @author park
+ * @license Apache2.0
  * <p>A class to form a Node API</p>
  */
 class NodeModel extends Loggable {

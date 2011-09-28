@@ -16,13 +16,14 @@ import org.topicquests.model._
 import scala.xml._
 import scala.collection.immutable.List
 import java.util.Date
-import org.topicquests.comet.{ConversationCometServer, AddNodeAction}
 import net.liftweb.http.js.JsCmds._
 import org.topicquests.model.NodeModel
 import js.jquery.JqJE
+import org.topicquests.comet.{EditNodeAction, ConversationCometServer, AddNodeAction}
 
 /**
  * @author park
+ * @license Apache2.0
  *
  */
 
@@ -64,19 +65,19 @@ class Conversations extends Loggable {
     // set in Conversation.show
     var x = "-1"
 
-    var parentId: Long = -1
+    var nodeId: Long = -1
     try {
       //this will fail when the user is not logged in
       //but in that case, we are not painting the response form anyway
       x = S.get("nodeid").openTheBox
-      parentId = x.toLong
+      nodeId = x.toLong
     } catch {
       case exc : Exception => {
         //do nothing
       }
     }
     // grab the node
-    var thenode: org.topicquests.model.Node = IBISNodeLoc(parentId).record
+    var thenode: org.topicquests.model.Node = IBISNodeLoc(nodeId).record
     nodetype = thenode.nodetype.toString()
     label = thenode.label.toString()
     details = thenode.details.toString()
@@ -87,7 +88,9 @@ class Conversations extends Loggable {
         case Full(user) =>  {
           model.updateNode(nodetype,label,details, user, thenode)
           S.notice("Edit saved")
-          JqJE.Jq("#node_" + thenode.uniqueId + " > .nodehref > .nodetitle") ~> JqJE.JqHtml(Text(label))
+          //Updates all comets listeners
+          ConversationCometServer ! new EditNodeAction(thenode)
+          Noop;
         }
         case _ => Noop;
       }

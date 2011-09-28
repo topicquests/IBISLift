@@ -6,6 +6,7 @@ import net.liftweb.util.{Props, Helpers}
 
 /**
  * @author dfernandez
+ * @license Apache2.0
  */
 
 class ChatLine extends LongKeyedMapper[ChatLine] with IdPK {
