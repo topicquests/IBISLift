@@ -8,6 +8,7 @@ import net.liftweb.common.Full
 import collection.mutable.HashSet
 import org.topicquests.model.SessionActiveNodes
 import xml.Text
+import net.liftweb.http.js.JE.JsRaw
 
 /**
  * @author dfernandez
@@ -45,7 +46,12 @@ class ConversationComet extends CometActor with CometListener {
     //If the user is viewing the node's conversation and it has been edited, it updates it .
     case EditNodeAction(node) =>{
       if(SessionActiveNodes.isDefined && SessionActiveNodes.open_!.contains(node.id)){
-        this.partialUpdate(OnLoad((JqJE.Jq("#node_" + node.uniqueId + " > .nodehref > .nodetitle") ~> JqJE.JqHtml(Text(node.label.is))).cmd))
+        this.partialUpdate(OnLoad(
+          (
+                  (JqJE.Jq("#node_" + node.uniqueId + " > .nodehref > .nodetitle") ~> JqJE.JqHtml(Text(node.label.is))).cmd &
+                  JsRaw("$('#node_" + node.uniqueId + " > .nodehref > .nodeimg').attr('src','/images/ibis/" + node.smallImage + "')").cmd
+
+          )))
       }
     }
 

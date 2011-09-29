@@ -58,7 +58,7 @@ class Conversation extends Loggable {
     buf.append(node.uniqueId.is)
     buf.append("'><a class='nodehref' href='")
     buf.append(node.id.toString())
-    buf.append("'><img src='/images/ibis/")
+    buf.append("'><img class='nodeimg' src='/images/ibis/")
     buf.append(node.smallImage)
     buf.append("'/><span class='nodetitle'>")
     buf.append(node.label.toString())
