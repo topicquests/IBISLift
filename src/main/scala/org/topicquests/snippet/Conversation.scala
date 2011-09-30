@@ -120,10 +120,15 @@ class Conversation extends Loggable {
     makeTree(nxx,tree)
     //conversation tree
     val tx:NodeSeq = XML.loadString(tree.toString())
-
+    val ux: User = User.find(rec.creator.toString()).openTheBox
+    val autname = getAuthorName(ux)
+    val dat = rec.startdate.toString
     //bind some stuff into the view
+ println("XXXX "+autname+" "+dat)
     bind("v",in,
       "title" -> rec.label.toString() ,
+      "author" -> new Text(autname),
+      "datetime" -> new Text(dat),
       "root" -> tx
       )
   }
@@ -240,27 +245,42 @@ class Conversation extends Loggable {
     logger.info("XXXX "+con)
     //  save parentId in case a child node is added
     S.set("nodeid", param)
-
+    val ux: User = User.find(con.creator.toString()).openTheBox
     val il = <span><img src={"/images/ibis/" + con.largeImage}/> <b>{con.label}</b></span>
+    val autname = getAuthorName(ux)
+    val dat = getNodeDate(con)
+    val nx = <span>{autname}</span>
+    val dx = <span>{dat}</span>
+//println("XXXX "+nx+" | "+dx)
     val det:String = con.details
     //note: here, we add the "response" form when appropriate
     if (userCanEdit(con)) {
       SetHtml("tab2", myeditform) &
-              SetHtml("tab3", myform) &
-              SetHtml("imglabel", il.child) &  SetHtml("tabs-1", Text(det))
+      SetHtml("tab3", myform) &
+      SetHtml("imglabel", il.child) &  SetHtml("tabs-1", Text(det)) &
+      SetHtml("authorname", nx.child) & SetHtml("datetime", dx.child)
     } else if (userCanParticipate(con)) {
       SetHtml("tab2", new Text("Not available")) &
-              SetHtml("tab3", myform) &
-              SetHtml("imglabel", il.child) &  SetHtml("tabs-1", Text(det))
+      SetHtml("tab3", myform) &
+      SetHtml("imglabel", il.child) &  SetHtml("tabs-1", Text(det)) &
+      SetHtml("authorname", nx.child) & SetHtml("datetime", dx.child)
     } else {
       SetHtml("imglabel", il.child) &
-              SetHtml("tabs-1", Text(det)) &
-              SetHtml("tab2", new Text("Not available")) &
-              SetHtml("tab3", new Text("Not available"))
+      SetHtml("tabs-1", Text(det)) &
+      SetHtml("tab2", new Text("Not available")) &
+      SetHtml("tab3", new Text("Not available")) &
+      SetHtml("authorname", nx.child) & SetHtml("datetime", dx.child)
     }
   }
 
-
+  def getAuthorName(con: User): String = {
+    val name = con.userName.toString()
+    name
+  }
+  def getNodeDate(con: org.topicquests.model.Node): String = {
+    val dx = con.date.toString
+    dx
+  }
 
 
 
