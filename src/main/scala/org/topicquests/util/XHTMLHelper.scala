@@ -15,6 +15,7 @@ object XHTMLHelper   {
   val whiteList = Whitelist.relaxed();
   whiteList.addTags("span");
   whiteList.addTags("hr");
+  whiteList.addTags("iframe");
   whiteList.addAttributes("p", "style");
   whiteList.addAttributes("a", "name");  
   whiteList.addAttributes("table", "border");
