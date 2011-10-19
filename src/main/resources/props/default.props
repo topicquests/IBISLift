@@ -2,10 +2,10 @@ admin.email = super@admin.com
 admin.pwd =	testing!
 admin.uname = testadmin
 
-invite.required = true
+invite.required = false
 authentication.required = false
 
-db.type = mysql
+db.type = h2
 db.spec = none
 
 db.server = localhost
@@ -13,7 +13,7 @@ db.port = 3306
 db.database = ibisliftdb
 db.charset = UTF-8
 db.user = ibisliftuser
-db.pass = mypass321
+db.password = mypass321
 
 max.chat.rows = 30
 
