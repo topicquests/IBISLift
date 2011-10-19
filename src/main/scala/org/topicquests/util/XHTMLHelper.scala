@@ -16,6 +16,16 @@ object XHTMLHelper   {
   whiteList.addTags("span");
   whiteList.addTags("hr");
   whiteList.addTags("iframe");
+    whiteList.addAttributes("iframe", "align");
+    whiteList.addAttributes("iframe", "frameborder");
+    whiteList.addAttributes("iframe", "longdesc");
+    whiteList.addAttributes("iframe", "name");
+    whiteList.addAttributes("iframe", "scrolling");
+    whiteList.addAttributes("iframe", "src");
+    whiteList.addAttributes("iframe", "title");
+    whiteList.addAttributes("iframe", "width");
+    whiteList.addAttributes("iframe", "height");
+
   whiteList.addAttributes("p", "style");
   whiteList.addAttributes("a", "name");  
   whiteList.addAttributes("table", "border");
