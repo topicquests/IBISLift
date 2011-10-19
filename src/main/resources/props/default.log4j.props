@@ -1,0 +1,31 @@
+log4j.rootLogger=DEBUG, R, console
+
+#
+#Append to Console
+#
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+#
+# Print the date in ISO 8601 format
+#
+log4j.appender.console.layout.ConversionPattern=%d [%t] %-5p %c - %m%n
+
+#
+# Append to ibislog.log file
+#
+log4j.appender.R=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.R.DatePattern='.'yyyy-MM-dd
+log4j.appender.R.File=ibislog.log
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+#
+# Print the date in ISO 8601 format
+#
+log4j.appender.R.layout.ConversionPattern=%d [%t] %-5p %c - %m%n
+
+#
+# Application logging options
+#
+#log4j.logger.org.apache=DEBUG
+#log4j.logger.org.apache=INFO
+#log4j.logger.org.apache.struts=DEBUG
+#log4j.logger.org.apache.struts=INFO

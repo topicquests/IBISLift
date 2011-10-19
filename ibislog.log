@@ -1,0 +1,609 @@
+2011-10-19 00:19:46,453 [main] INFO  bootstrap.liftweb.Boot - STARTING Full(mysql)
+2011-10-19 00:19:46,537 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for User
+2011-10-19 00:19:46,540 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:19:46,651 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Node
+2011-10-19 00:19:46,652 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:19:46,683 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for IBISConversation
+2011-10-19 00:19:46,684 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:19:46,699 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for ChatLine
+2011-10-19 00:19:46,700 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:19:46,713 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Image
+2011-10-19 00:19:46,713 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:19:46,729 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Invitee
+2011-10-19 00:19:46,730 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:19:46,932 [main] DEBUG net.liftweb.mapper.Schemifier - Starting schemify. write=true, structureOnly=false, dbId=ConnectionIdentifier(lift), schema=ibisliftuser@localhost, tables=List(users, conversation_nodes, conversations, chatline, images, invitees)
+2011-10-19 00:19:46,934 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table users
+2011-10-19 00:19:46,934 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversation_nodes
+2011-10-19 00:19:46,934 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversations
+2011-10-19 00:19:46,935 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table chatline
+2011-10-19 00:19:46,935 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table images
+2011-10-19 00:19:46,935 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table invitees
+2011-10-19 00:19:47,451 [main] DEBUG net.liftweb.mapper.Schemifier - Executing DDL statements
+2011-10-19 00:19:47,452 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table users
+2011-10-19 00:19:47,453 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversation_nodes
+2011-10-19 00:19:47,453 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversations
+2011-10-19 00:19:47,453 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table chatline
+2011-10-19 00:19:47,453 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table images
+2011-10-19 00:19:47,454 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table invitees
+2011-10-19 00:20:00,897 [239228739@qtp-221571972-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 874 Milliseconds
+2011-10-19 00:20:00,944 [239228739@qtp-221571972-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 21 Milliseconds
+2011-10-19 00:20:10,221 [239228739@qtp-221571972-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /login returned 200, took 90 Milliseconds
+2011-10-19 00:20:10,862 [239228739@qtp-221571972-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:20:13,889 [239228739@qtp-221571972-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /login returned 302, took 94 Milliseconds
+2011-10-19 00:20:13,978 [239228739@qtp-221571972-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 85 Milliseconds
+2011-10-19 00:20:14,004 [239228739@qtp-221571972-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:31:07,868 [main] DEBUG net.liftweb.http.LiftServlet - Destroyed Lift handler.
+2011-10-19 00:31:53,017 [main] INFO  bootstrap.liftweb.Boot - STARTING Full(mysql)
+2011-10-19 00:31:53,100 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for User
+2011-10-19 00:31:53,102 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:31:53,564 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Node
+2011-10-19 00:31:53,564 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:31:53,593 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for IBISConversation
+2011-10-19 00:31:53,594 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:31:53,608 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for ChatLine
+2011-10-19 00:31:53,608 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:31:53,620 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Image
+2011-10-19 00:31:53,620 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:31:53,636 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Invitee
+2011-10-19 00:31:53,637 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:31:53,814 [main] DEBUG net.liftweb.mapper.Schemifier - Starting schemify. write=true, structureOnly=false, dbId=ConnectionIdentifier(lift), schema=ibisliftuser@localhost, tables=List(users, conversation_nodes, conversations, chatline, images, invitees)
+2011-10-19 00:31:53,816 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table users
+2011-10-19 00:31:53,816 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversation_nodes
+2011-10-19 00:31:53,817 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversations
+2011-10-19 00:31:53,817 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table chatline
+2011-10-19 00:31:53,818 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table images
+2011-10-19 00:31:53,818 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table invitees
+2011-10-19 00:31:54,312 [main] DEBUG net.liftweb.mapper.Schemifier - Executing DDL statements
+2011-10-19 00:31:54,313 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table users
+2011-10-19 00:31:54,313 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversation_nodes
+2011-10-19 00:31:54,314 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversations
+2011-10-19 00:31:54,314 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table chatline
+2011-10-19 00:31:54,314 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table images
+2011-10-19 00:31:54,315 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table invitees
+2011-10-19 00:32:01,492 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 627 Milliseconds
+2011-10-19 00:32:01,542 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 24 Milliseconds
+2011-10-19 00:32:03,199 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /login returned 200, took 85 Milliseconds
+2011-10-19 00:32:03,230 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:32:07,069 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /login returned 302, took 91 Milliseconds
+2011-10-19 00:32:07,153 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 80 Milliseconds
+2011-10-19 00:32:07,190 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:32:13,272 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /newconversation returned 200, took 212 Milliseconds
+2011-10-19 00:32:13,327 [1875413017@qtp-1876332795-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 15 Milliseconds
+2011-10-19 00:32:26,130 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversations - STARTING
+2011-10-19 00:32:26,189 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversations - PROCESSING <come on> & now!! Question
+2011-10-19 00:32:26,192 [2046375628@qtp-1876332795-2] INFO  org.topicquests.model.NodeModel - AAAAA Question
+2011-10-19 00:32:26,217 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=Node, entity=org.topicquests.model.Node={parent=NULL,id=-1,date=Wed, 19 Oct 2011 03:32:26 UTC,label=asddasdasdsa,uniqueId=VBFYQYZLFM2HTLEK5QZYCX4FDMQEAWYT,conversation=NULL,details=<p>
+	asd dsadas&nbsp; dsads</p>
+,smallImage=issue_sm.png,largeImage=issue.png,lang=,creator=6,nodetype=Question}
+2011-10-19 00:32:26,249 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.OneToMany - Created FieldFinder for class net.liftweb.mapper.OneToMany$MappedOneToManyBase
+2011-10-19 00:32:26,296 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversations - PROCESSING-2 org.topicquests.model.Node={parent=NULL,id=122,date=Wed, 19 Oct 2011 03:32:26 UTC,label=asddasdasdsa,uniqueId=VBFYQYZLFM2HTLEK5QZYCX4FDMQEAWYT,conversation=NULL,details=<p>
+	asd dsadas&nbsp; dsads</p>
+,smallImage=issue_sm.png,largeImage=issue.png,lang=,creator=6,nodetype=Question}
+2011-10-19 00:32:26,299 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=IBISConversation, entity=org.topicquests.model.IBISConversation={id=-1,label=<come on> & now!!,details=,creator=6,rootnodeid=122,startdate=Wed, 19 Oct 2011 03:32:26 UTC,lastdate=Wed, 19 Oct 2011 03:32:26 UTC}
+2011-10-19 00:32:26,326 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversations - PROCESSED 22
+2011-10-19 00:32:26,341 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=Node, entity=org.topicquests.model.Node={parent=NULL,id=122,date=Wed, 19 Oct 2011 03:32:26 UTC,label=asddasdasdsa,uniqueId=VBFYQYZLFM2HTLEK5QZYCX4FDMQEAWYT,conversation=22,details=<p>
+	asd dsadas&nbsp; dsads</p>
+,smallImage=issue_sm.png,largeImage=issue.png,lang=,creator=6,nodetype=Question}
+2011-10-19 00:32:26,395 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /newconversation returned 302, took 279 Milliseconds
+2011-10-19 00:32:26,473 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 75 Milliseconds
+2011-10-19 00:32:26,503 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:32:31,048 [pool-8-thread-6] DEBUG net.liftweb.http.CometActor - CometActor org.topicquests.comet.ConversationComet@2c7405fe got unexpected message java.lang.Object@75357d7e
+2011-10-19 00:32:31,178 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversation - EXPORTING http://localhost:8080/wsexport/22
+2011-10-19 00:32:31,225 [pool-8-thread-10] DEBUG net.liftweb.http.CometActor - CometActor org.topicquests.comet.ChatComet@7a7a97e8 got unexpected message java.lang.Object@68b3f2a
+2011-10-19 00:32:31,380 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /conversation/22 returned 200, took 617 Milliseconds
+2011-10-19 00:32:31,574 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 16 Milliseconds
+2011-10-19 00:32:31,584 [153576230@qtp-1876332795-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /comet_request/1pa5k3zs75sr51raavfx9zulii/cometAjax.js returned 200, took 23 Milliseconds
+2011-10-19 00:32:36,134 [153576230@qtp-1876332795-3] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(F61947605618530D4BO -> List(122))
+2011-10-19 00:32:36,188 [153576230@qtp-1876332795-3] INFO  org.topicquests.snippet.Conversation - XXXX org.topicquests.model.Node={parent=NULL,id=122,date=Wed, 19 Oct 2011 03:32:26 UTC,label=asddasdasdsa,uniqueId=VBFYQYZLFM2HTLEK5QZYCX4FDMQEAWYT,conversation=22,details=<p>
+	asd dsadas&nbsp; dsads</p>
+,smallImage=issue_sm.png,largeImage=issue.png,lang=,creator=6,nodetype=Question}
+2011-10-19 00:32:36,459 [153576230@qtp-1876332795-3] INFO  org.topicquests.snippet.Conversation - USERCANEDIT-1 0 true
+2011-10-19 00:32:36,478 [153576230@qtp-1876332795-3] INFO  org.topicquests.snippet.Conversation - USERCANEDIT-2 6 6 true
+2011-10-19 00:32:36,698 [153576230@qtp-1876332795-3] DEBUG comet_trace - AJAX Response: 1pa5k3zs75sr51raavfx9zulii InMemoryResponse(
+try{jQuery("#tab2").each(function(i) {this.innerHTML = "<form id=\"F619476056205Y5DKJX\" action=\"javascript://\" onsubmit=\"liftAjax.lift_ajaxHandler(jQuery(\u0027#\u0027+&quot;F619476056205Y5DKJX&quot;).serialize(), null, null, &quot;javascript&quot;);return false;\"><div id=\"editform\">\u000a    <div>\u000a        <fieldset>\u000a            <legend>Create a Response to the Selected Node</legend>\u000a            <div class=\"radio\">\u000a                <fieldset>\u000a                    <legend><span>Select a Node type (REQUIRED):<span>*</span> </span></legend>\u000a                    <div>\u000a                        Question<input class=\"question\" checked=\"checked\" name=\"F619476056200ACB5KQ\" type=\"radio\" value=\"Question\"><img src=\"/images/ibis/issue.png\">\u000a                        Idea<input class=\"idea\" name=\"F619476056200ACB5KQ\" type=\"radio\" value=\"Idea\"><img src=\"/images/ibis/position.png\">\u000a                        Pro<input class=\"pro\" name=\"F619476056200ACB5KQ\" type=\"radio\" value=\"Pro\"><img src=\"/images/ibis/plus.png\">\u000a                        Con<input class=\"con\" name=\"F619476056200ACB5KQ\" type=\"radio\" value=\"Con\"><img src=\"/images/ibis/minus.png\">\u000a                        Reference<input class=\"ref\" name=\"F619476056200ACB5KQ\" type=\"radio\" value=\"Reference\"><img src=\"/images/ibis/reference.png\">\u000a                    </div>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend><span>State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>\u000a                    <label>Statement:<span>*</span></label>\u000a                    <textarea onkeyup=\"return imposeMaxLength(this)\" id=\"editlabel\" cols=\"79\" class=\"required label\" name=\"F619476056201CMOKXO\" style=\"width:auto;height:auto;\" rows=\"2\" maxlength=\"200\">asddasdasdsa</textarea>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend>Explain the Details (Optional)</legend>\u000a                    <textarea class=\"details\" id=\"editdetails\" cols=\"79\" name=\"F619476056202U2MGAI\" rows=\"5\">&lt;p&gt;\u000d\u000a\u0009asd dsadas&amp;nbsp; dsads&lt;/p&gt;\u000d\u000a</textarea>\u000a                </fieldset>\u000a            </div>\u000a        </fieldset>\u000a    </div>\u000a    <input class=\"submit\" onclick=\"liftAjax.lift_uriSuffix = \u0027zF619476056204CB41RM=_\u0027; return true;\" type=\"submit\" name=\"zF619476056204CB41RM\" value=\"Save\">\u000a    <div id=\"lift__noticesContainer__\"></div><tail></tail><tail></tail><tail></tail>\u000a</div></form>";});} catch (e) {}; 
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);});
+// ]]>
+;
+try{jQuery("#tab3").each(function(i) {this.innerHTML = "<form id=\"F619476056211A31QWK\" action=\"javascript://\" onsubmit=\"liftAjax.lift_ajaxHandler(jQuery(\u0027#\u0027+&quot;F619476056211A31QWK&quot;).serialize(), null, null, &quot;javascript&quot;);return false;\"><div id=\"createform\">\u000a    <legend>Create a Response to the Selected Node</legend>\u000a    <div id=\"resp_step1\">\u000a        <div class=\"radio\">\u000a            <fieldset>\u000a                <legend><span>Step1: Select a Node type (REQUIRED):<span>*</span> </span></legend>\u000a                <div>                                                                                                      \u000a                    <div class=\"opt\" id=\"ref\"><img src=\"/images/ibis/reference.png\"><div>Reference</div></div>\u000a                    <div class=\"opt\" id=\"con\"><img src=\"/images/ibis/minus.png\"><div>Con</div></div>\u000a                    <div class=\"opt\" id=\"pro\"><img src=\"/images/ibis/plus.png\"><div>Pro</div></div>\u000a                    <div class=\"opt\" id=\"idea\"><img src=\"/images/ibis/position.png\"><div>Idea</div></div>\u000a                    <div class=\"opt\" id=\"question\"><img src=\"/images/ibis/issue.png\"><div>Question</div></div>\u000a                </div>\u000a            </fieldset>\u000a        </div>\u000a    </div>\u000a    <div style=\"display:none\" id=\"resp_step2\">\u000a        <fieldset>\u000a            <div class=\"radio\">\u000a                <fieldset>\u000a                    <legend><span>Node type (REQUIRED):<span>*</span> </span></legend>\u000a                    <div>\u000a                        Question<input class=\"question\" checked=\"checked\" name=\"F619476056206VLHYQA\" type=\"radio\" value=\"Question\"><img src=\"/images/ibis/issue.png\">\u000a                        Idea<input class=\"idea\" name=\"F619476056206VLHYQA\" type=\"radio\" value=\"Idea\"><img src=\"/images/ibis/position.png\">\u000a                        Pro<input class=\"pro\" name=\"F619476056206VLHYQA\" type=\"radio\" value=\"Pro\"><img src=\"/images/ibis/plus.png\">\u000a                        Con<input class=\"con\" name=\"F619476056206VLHYQA\" type=\"radio\" value=\"Con\"><img src=\"/images/ibis/minus.png\">\u000a                        Reference<input class=\"ref\" name=\"F619476056206VLHYQA\" type=\"radio\" value=\"Reference\"><img src=\"/images/ibis/reference.png\">\u000a                    </div>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend><span>State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>\u000a                    <label>Statement:<span>*</span></label>\u000a                    <textarea onkeyup=\"return imposeMaxLength(this)\" id=\"resplabel\" cols=\"79\" class=\"required label\" name=\"F6194760562070T04FN\" style=\"width:auto;height:auto;\" rows=\"2\" maxlength=\"200\"></textarea>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend>Explain the Details (Optional)</legend>\u000a                    <textarea class=\"details\" id=\"respdetails\" cols=\"79\" name=\"F619476056208OMLHOJ\" rows=\"5\"></textarea>\u000a                </fieldset>\u000a            </div>\u000a        </fieldset>\u000a        <input class=\"submit\" onclick=\"liftAjax.lift_uriSuffix = \u0027zF619476056210DAPZ3K=_\u0027; return true;\" type=\"submit\" name=\"zF619476056210DAPZ3K\" value=\"Save\">\u000a        <div id=\"lift__noticesContainer__\"></div><tail></tail><tail></tail><tail></tail>\u000a    </div>\u000a</div></form>";});} catch (e) {}; 
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);});
+// ]]>
+;
+try{jQuery("#imglabel").each(function(i) {this.innerHTML = "<img src=\"/images/ibis/issue.png\"> <b>asddasdasdsa</b>";});} catch (e) {}
+try{jQuery("#tabs-1").each(function(i) {this.innerHTML = "<div><p> asd dsadas&nbsp; dsads</p></div>";});} catch (e) {}
+try{jQuery("#authorname").each(function(i) {this.innerHTML = "dfernandez";});} catch (e) {}
+try{jQuery("#datetime").each(function(i) {this.innerHTML = "Wed, 19 Oct 2011 03:32:26 UTC";});} catch (e) {}
+jQuery(document).ready(function() {delete CKEDITOR.instances['respdetails'];delete CKEDITOR.instances['editdetails'];$('#respdetails').ckeditor();$('#editdetails').ckeditor();;});, List((Content-Length,8099), (Content-Type,text/javascript; charset=utf-8)), List(), 200)
+2011-10-19 00:32:36,754 [153576230@qtp-1876332795-3] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 628 Milliseconds
+2011-10-19 00:32:49,766 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(F619476056200ACB5KQ -> List(Question), F619476056201CMOKXO -> List(< com on now! & >), F619476056202U2MGAI -> List(<p>
+	asd dsadas&nbsp; dsads</p>
+), zF619476056204CB41RM -> List(_))
+2011-10-19 00:32:49,792 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversations - STARTING PARENT ID 122 Question
+2011-10-19 00:32:49,793 [2046375628@qtp-1876332795-2] INFO  org.topicquests.model.NodeModel - UPDATING Question
+2011-10-19 00:32:49,832 [2046375628@qtp-1876332795-2] INFO  org.topicquests.model.NodeModel - AAAAA Question
+2011-10-19 00:32:49,855 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=Node, entity=org.topicquests.model.Node={parent=NULL,id=122,date=Wed, 19 Oct 2011 03:32:49 UTC,label=< com on now! & >,uniqueId=VBFYQYZLFM2HTLEK5QZYCX4FDMQEAWYT,conversation=22,details=<p>
+	asd dsadas&nbsp; dsads</p>
+,smallImage=issue_sm.png,largeImage=issue.png,lang=,creator=6,nodetype=Question}
+2011-10-19 00:32:49,908 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.OneToMany - Created FieldFinder for class net.liftweb.mapper.OneToMany$MappedOneToManyBase
+2011-10-19 00:32:49,935 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Response: 1pa5k3zs75sr51raavfx9zulii InMemoryResponse(try{jQuery("#lift__noticesContainer__").each(function(i) {this.innerHTML = "<div id=\"lift__noticesContainer___notice\"><ul><li>Edit saved</li></ul></div>";});} catch (e) {}
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);
+
+
+
+, List((Content-Length,456), (Content-Type,text/javascript; charset=utf-8)), List(), 200)
+2011-10-19 00:32:49,938 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 184 Milliseconds
+2011-10-19 00:33:47,535 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(__lift__GC -> List(_))
+2011-10-19 00:33:47,543 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 13 Milliseconds
+2011-10-19 00:34:01,831 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(F61947605618530D4BO -> List(122))
+2011-10-19 00:34:01,862 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversation - XXXX org.topicquests.model.Node={parent=NULL,id=122,date=Wed, 19 Oct 2011 03:32:49 UTC,label=< com on now! & >,uniqueId=VBFYQYZLFM2HTLEK5QZYCX4FDMQEAWYT,conversation=22,details=<p>
+	asd dsadas&nbsp; dsads</p>
+,smallImage=issue_sm.png,largeImage=issue.png,lang=,creator=6,nodetype=Question}
+2011-10-19 00:34:01,902 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversation - USERCANEDIT-1 0 true
+2011-10-19 00:34:01,902 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversation - USERCANEDIT-2 6 6 true
+2011-10-19 00:34:01,965 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Response: 1pa5k3zs75sr51raavfx9zulii InMemoryResponse(
+try{jQuery("#tab2").each(function(i) {this.innerHTML = "<form id=\"F619476056223OAM3W5\" action=\"javascript://\" onsubmit=\"liftAjax.lift_ajaxHandler(jQuery(\u0027#\u0027+&quot;F619476056223OAM3W5&quot;).serialize(), null, null, &quot;javascript&quot;);return false;\"><div id=\"editform\">\u000a    <div>\u000a        <fieldset>\u000a            <legend>Create a Response to the Selected Node</legend>\u000a            <div class=\"radio\">\u000a                <fieldset>\u000a                    <legend><span>Select a Node type (REQUIRED):<span>*</span> </span></legend>\u000a                    <div>\u000a                        Question<input class=\"question\" checked=\"checked\" name=\"F619476056218UVQTLH\" type=\"radio\" value=\"Question\"><img src=\"/images/ibis/issue.png\">\u000a                        Idea<input class=\"idea\" name=\"F619476056218UVQTLH\" type=\"radio\" value=\"Idea\"><img src=\"/images/ibis/position.png\">\u000a                        Pro<input class=\"pro\" name=\"F619476056218UVQTLH\" type=\"radio\" value=\"Pro\"><img src=\"/images/ibis/plus.png\">\u000a                        Con<input class=\"con\" name=\"F619476056218UVQTLH\" type=\"radio\" value=\"Con\"><img src=\"/images/ibis/minus.png\">\u000a                        Reference<input class=\"ref\" name=\"F619476056218UVQTLH\" type=\"radio\" value=\"Reference\"><img src=\"/images/ibis/reference.png\">\u000a                    </div>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend><span>State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>\u000a                    <label>Statement:<span>*</span></label>\u000a                    <textarea onkeyup=\"return imposeMaxLength(this)\" id=\"editlabel\" cols=\"79\" class=\"required label\" name=\"F619476056219GIJXBQ\" style=\"width:auto;height:auto;\" rows=\"2\" maxlength=\"200\">&lt; com on now! &amp; &gt;</textarea>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend>Explain the Details (Optional)</legend>\u000a                    <textarea class=\"details\" id=\"editdetails\" cols=\"79\" name=\"F619476056220XIBH2Z\" rows=\"5\">&lt;p&gt;\u000a\u0009asd dsadas&amp;nbsp; dsads&lt;/p&gt;\u000a</textarea>\u000a                </fieldset>\u000a            </div>\u000a        </fieldset>\u000a    </div>\u000a    <input class=\"submit\" onclick=\"liftAjax.lift_uriSuffix = \u0027zF619476056222H1NLQ0=_\u0027; return true;\" type=\"submit\" name=\"zF619476056222H1NLQ0\" value=\"Save\">\u000a    <div id=\"lift__noticesContainer__\"></div><tail></tail><tail></tail><tail></tail>\u000a</div></form>";});} catch (e) {}; 
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);});
+// ]]>
+;
+try{jQuery("#tab3").each(function(i) {this.innerHTML = "<form id=\"F619476056229ECG2XI\" action=\"javascript://\" onsubmit=\"liftAjax.lift_ajaxHandler(jQuery(\u0027#\u0027+&quot;F619476056229ECG2XI&quot;).serialize(), null, null, &quot;javascript&quot;);return false;\"><div id=\"createform\">\u000a    <legend>Create a Response to the Selected Node</legend>\u000a    <div id=\"resp_step1\">\u000a        <div class=\"radio\">\u000a            <fieldset>\u000a                <legend><span>Step1: Select a Node type (REQUIRED):<span>*</span> </span></legend>\u000a                <div>                                                                                                      \u000a                    <div class=\"opt\" id=\"ref\"><img src=\"/images/ibis/reference.png\"><div>Reference</div></div>\u000a                    <div class=\"opt\" id=\"con\"><img src=\"/images/ibis/minus.png\"><div>Con</div></div>\u000a                    <div class=\"opt\" id=\"pro\"><img src=\"/images/ibis/plus.png\"><div>Pro</div></div>\u000a                    <div class=\"opt\" id=\"idea\"><img src=\"/images/ibis/position.png\"><div>Idea</div></div>\u000a                    <div class=\"opt\" id=\"question\"><img src=\"/images/ibis/issue.png\"><div>Question</div></div>\u000a                </div>\u000a            </fieldset>\u000a        </div>\u000a    </div>\u000a    <div style=\"display:none\" id=\"resp_step2\">\u000a        <fieldset>\u000a            <div class=\"radio\">\u000a                <fieldset>\u000a                    <legend><span>Node type (REQUIRED):<span>*</span> </span></legend>\u000a                    <div>\u000a                        Question<input class=\"question\" checked=\"checked\" name=\"F619476056224R1GRLM\" type=\"radio\" value=\"Question\"><img src=\"/images/ibis/issue.png\">\u000a                        Idea<input class=\"idea\" name=\"F619476056224R1GRLM\" type=\"radio\" value=\"Idea\"><img src=\"/images/ibis/position.png\">\u000a                        Pro<input class=\"pro\" name=\"F619476056224R1GRLM\" type=\"radio\" value=\"Pro\"><img src=\"/images/ibis/plus.png\">\u000a                        Con<input class=\"con\" name=\"F619476056224R1GRLM\" type=\"radio\" value=\"Con\"><img src=\"/images/ibis/minus.png\">\u000a                        Reference<input class=\"ref\" name=\"F619476056224R1GRLM\" type=\"radio\" value=\"Reference\"><img src=\"/images/ibis/reference.png\">\u000a                    </div>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend><span>State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>\u000a                    <label>Statement:<span>*</span></label>\u000a                    <textarea onkeyup=\"return imposeMaxLength(this)\" id=\"resplabel\" cols=\"79\" class=\"required label\" name=\"F619476056225AJ3C0S\" style=\"width:auto;height:auto;\" rows=\"2\" maxlength=\"200\"></textarea>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend>Explain the Details (Optional)</legend>\u000a                    <textarea class=\"details\" id=\"respdetails\" cols=\"79\" name=\"F619476056226NTXVLY\" rows=\"5\"></textarea>\u000a                </fieldset>\u000a            </div>\u000a        </fieldset>\u000a        <input class=\"submit\" onclick=\"liftAjax.lift_uriSuffix = \u0027zF6194760562285LTJNW=_\u0027; return true;\" type=\"submit\" name=\"zF6194760562285LTJNW\" value=\"Save\">\u000a        <div id=\"lift__noticesContainer__\"></div><tail></tail><tail></tail><tail></tail>\u000a    </div>\u000a</div></form>";});} catch (e) {}; 
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);});
+// ]]>
+;
+try{jQuery("#imglabel").each(function(i) {this.innerHTML = "<img src=\"/images/ibis/issue.png\"> <b>&lt; com on now! &amp; &gt;</b>";});} catch (e) {}
+try{jQuery("#tabs-1").each(function(i) {this.innerHTML = "<div><p> asd dsadas&nbsp; dsads</p></div>";});} catch (e) {}
+try{jQuery("#authorname").each(function(i) {this.innerHTML = "dfernandez";});} catch (e) {}
+try{jQuery("#datetime").each(function(i) {this.innerHTML = "Wed, 19 Oct 2011 03:32:49 UTC";});} catch (e) {}
+jQuery(document).ready(function() {delete CKEDITOR.instances['respdetails'];delete CKEDITOR.instances['editdetails'];$('#respdetails').ckeditor();$('#editdetails').ckeditor();;});, List((Content-Length,8117), (Content-Type,text/javascript; charset=utf-8)), List(), 200)
+2011-10-19 00:34:01,978 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 151 Milliseconds
+2011-10-19 00:34:06,896 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(F619476056224R1GRLM -> List(Con), F619476056225AJ3C0S -> List(Q&A ), F619476056226NTXVLY -> List(<p>
+	Q&amp;A<span class="Apple-converted-space"> </span></p>
+), zF6194760562285LTJNW -> List(_))
+2011-10-19 00:34:06,898 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversations - STARTING PARENT ID 122 Con
+2011-10-19 00:34:06,899 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversations - PROCESSING Q&A  Con 122
+2011-10-19 00:34:06,900 [2046375628@qtp-1876332795-2] INFO  org.topicquests.model.NodeModel - AAAAA Con
+2011-10-19 00:34:07,007 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=Node, entity=org.topicquests.model.Node={parent=NULL,id=122,date=Wed, 19 Oct 2011 03:32:49 UTC,label=< com on now! & >,uniqueId=VBFYQYZLFM2HTLEK5QZYCX4FDMQEAWYT,conversation=22,details=<p>
+	asd dsadas&nbsp; dsads</p>
+,smallImage=issue_sm.png,largeImage=issue.png,lang=,creator=6,nodetype=Question}
+2011-10-19 00:34:07,009 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.OneToMany - Created FieldFinder for class net.liftweb.mapper.OneToMany$MappedOneToManyBase
+2011-10-19 00:34:07,013 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=Node, entity=org.topicquests.model.Node={parent=122,id=-1,date=Wed, 19 Oct 2011 03:34:06 UTC,label=Q&A ,uniqueId=2NIEQI0ED3S4J0KEFN5OZMCHHDOAFOFY,conversation=22,details=<p>
+	Q&amp;A<span class="Apple-converted-space"> </span></p>
+,smallImage=minus_sm.png,largeImage=minus.png,lang=,creator=6,nodetype=Con}
+2011-10-19 00:34:07,044 [2046375628@qtp-1876332795-2] DEBUG net.liftweb.mapper.OneToMany - Created FieldFinder for class net.liftweb.mapper.OneToMany$MappedOneToManyBase
+2011-10-19 00:34:07,073 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Response: 1pa5k3zs75sr51raavfx9zulii InMemoryResponse(try{jQuery("#lift__noticesContainer__").each(function(i) {this.innerHTML = "<div id=\"lift__noticesContainer___notice\"><ul><li>Response saved</li></ul></div>";});} catch (e) {}
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);
+
+
+
+$('#resp_step1').show();$('#resp_step2').hide();$('#resplabel').val('');$('#respdetails').val('');;, List((Content-Length,559), (Content-Type,text/javascript; charset=utf-8)), List(), 200)
+2011-10-19 00:34:07,077 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 184 Milliseconds
+2011-10-19 00:34:09,392 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(F61947605618530D4BO -> List(123))
+2011-10-19 00:34:09,416 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversation - XXXX org.topicquests.model.Node={parent=122,id=123,date=Wed, 19 Oct 2011 03:34:06 UTC,label=Q&A ,uniqueId=2NIEQI0ED3S4J0KEFN5OZMCHHDOAFOFY,conversation=22,details=<p>
+	Q&amp;A<span class="Apple-converted-space"> </span></p>
+,smallImage=minus_sm.png,largeImage=minus.png,lang=,creator=6,nodetype=Con}
+2011-10-19 00:34:09,454 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversation - USERCANEDIT-1 0 true
+2011-10-19 00:34:09,455 [2046375628@qtp-1876332795-2] INFO  org.topicquests.snippet.Conversation - USERCANEDIT-2 6 6 true
+2011-10-19 00:34:09,527 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Response: 1pa5k3zs75sr51raavfx9zulii InMemoryResponse(
+try{jQuery("#tab2").each(function(i) {this.innerHTML = "<form id=\"F6194760562404DN4QI\" action=\"javascript://\" onsubmit=\"liftAjax.lift_ajaxHandler(jQuery(\u0027#\u0027+&quot;F6194760562404DN4QI&quot;).serialize(), null, null, &quot;javascript&quot;);return false;\"><div id=\"editform\">\u000a    <div>\u000a        <fieldset>\u000a            <legend>Create a Response to the Selected Node</legend>\u000a            <div class=\"radio\">\u000a                <fieldset>\u000a                    <legend><span>Select a Node type (REQUIRED):<span>*</span> </span></legend>\u000a                    <div>\u000a                        Question<input class=\"question\" name=\"F619476056235GHN4HO\" type=\"radio\" value=\"Question\"><img src=\"/images/ibis/issue.png\">\u000a                        Idea<input class=\"idea\" name=\"F619476056235GHN4HO\" type=\"radio\" value=\"Idea\"><img src=\"/images/ibis/position.png\">\u000a                        Pro<input class=\"pro\" name=\"F619476056235GHN4HO\" type=\"radio\" value=\"Pro\"><img src=\"/images/ibis/plus.png\">\u000a                        Con<input class=\"con\" checked=\"checked\" name=\"F619476056235GHN4HO\" type=\"radio\" value=\"Con\"><img src=\"/images/ibis/minus.png\">\u000a                        Reference<input class=\"ref\" name=\"F619476056235GHN4HO\" type=\"radio\" value=\"Reference\"><img src=\"/images/ibis/reference.png\">\u000a                    </div>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend><span>State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>\u000a                    <label>Statement:<span>*</span></label>\u000a                    <textarea onkeyup=\"return imposeMaxLength(this)\" id=\"editlabel\" cols=\"79\" class=\"required label\" name=\"F619476056236Q22FQQ\" style=\"width:auto;height:auto;\" rows=\"2\" maxlength=\"200\">Q&amp;A </textarea>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend>Explain the Details (Optional)</legend>\u000a                    <textarea class=\"details\" id=\"editdetails\" cols=\"79\" name=\"F619476056237501WPS\" rows=\"5\">&lt;p&gt;\u000a\u0009Q&amp;amp;A&lt;span class=&quot;Apple-converted-space&quot;&gt; &lt;/span&gt;&lt;/p&gt;\u000a</textarea>\u000a                </fieldset>\u000a            </div>\u000a        </fieldset>\u000a    </div>\u000a    <input class=\"submit\" onclick=\"liftAjax.lift_uriSuffix = \u0027zF619476056239ZVQSQB=_\u0027; return true;\" type=\"submit\" name=\"zF619476056239ZVQSQB\" value=\"Save\">\u000a    <div id=\"lift__noticesContainer__\"></div><tail></tail><tail></tail><tail></tail>\u000a</div></form>";});} catch (e) {}; 
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);});
+// ]]>
+;
+try{jQuery("#tab3").each(function(i) {this.innerHTML = "<form id=\"F619476056246BBG1YY\" action=\"javascript://\" onsubmit=\"liftAjax.lift_ajaxHandler(jQuery(\u0027#\u0027+&quot;F619476056246BBG1YY&quot;).serialize(), null, null, &quot;javascript&quot;);return false;\"><div id=\"createform\">\u000a    <legend>Create a Response to the Selected Node</legend>\u000a    <div id=\"resp_step1\">\u000a        <div class=\"radio\">\u000a            <fieldset>\u000a                <legend><span>Step1: Select a Node type (REQUIRED):<span>*</span> </span></legend>\u000a                <div>                                                                                                      \u000a                    <div class=\"opt\" id=\"ref\"><img src=\"/images/ibis/reference.png\"><div>Reference</div></div>\u000a                    <div class=\"opt\" id=\"con\"><img src=\"/images/ibis/minus.png\"><div>Con</div></div>\u000a                    <div class=\"opt\" id=\"pro\"><img src=\"/images/ibis/plus.png\"><div>Pro</div></div>\u000a                    <div class=\"opt\" id=\"idea\"><img src=\"/images/ibis/position.png\"><div>Idea</div></div>\u000a                    <div class=\"opt\" id=\"question\"><img src=\"/images/ibis/issue.png\"><div>Question</div></div>\u000a                </div>\u000a            </fieldset>\u000a        </div>\u000a    </div>\u000a    <div style=\"display:none\" id=\"resp_step2\">\u000a        <fieldset>\u000a            <div class=\"radio\">\u000a                <fieldset>\u000a                    <legend><span>Node type (REQUIRED):<span>*</span> </span></legend>\u000a                    <div>\u000a                        Question<input class=\"question\" checked=\"checked\" name=\"F619476056241Q1TP4M\" type=\"radio\" value=\"Question\"><img src=\"/images/ibis/issue.png\">\u000a                        Idea<input class=\"idea\" name=\"F619476056241Q1TP4M\" type=\"radio\" value=\"Idea\"><img src=\"/images/ibis/position.png\">\u000a                        Pro<input class=\"pro\" name=\"F619476056241Q1TP4M\" type=\"radio\" value=\"Pro\"><img src=\"/images/ibis/plus.png\">\u000a                        Con<input class=\"con\" name=\"F619476056241Q1TP4M\" type=\"radio\" value=\"Con\"><img src=\"/images/ibis/minus.png\">\u000a                        Reference<input class=\"ref\" name=\"F619476056241Q1TP4M\" type=\"radio\" value=\"Reference\"><img src=\"/images/ibis/reference.png\">\u000a                    </div>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend><span>State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>\u000a                    <label>Statement:<span>*</span></label>\u000a                    <textarea onkeyup=\"return imposeMaxLength(this)\" id=\"resplabel\" cols=\"79\" class=\"required label\" name=\"F619476056242FS25WB\" style=\"width:auto;height:auto;\" rows=\"2\" maxlength=\"200\"></textarea>\u000a                </fieldset>\u000a            </div>\u000a            <div>\u000a                <fieldset>\u000a                    <legend>Explain the Details (Optional)</legend>\u000a                    <textarea class=\"details\" id=\"respdetails\" cols=\"79\" name=\"F619476056243JOZKMI\" rows=\"5\"></textarea>\u000a                </fieldset>\u000a            </div>\u000a        </fieldset>\u000a        <input class=\"submit\" onclick=\"liftAjax.lift_uriSuffix = \u0027zF619476056245QA42A0=_\u0027; return true;\" type=\"submit\" name=\"zF619476056245QA42A0\" value=\"Save\">\u000a        <div id=\"lift__noticesContainer__\"></div><tail></tail><tail></tail><tail></tail>\u000a    </div>\u000a</div></form>";});} catch (e) {}; 
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(2000);}, 3000);});
+// ]]>
+;
+
+// <![CDATA[
+jQuery(document).ready(function() {setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(2000);}, 3000);});
+// ]]>
+;
+try{jQuery("#imglabel").each(function(i) {this.innerHTML = "<img src=\"/images/ibis/minus.png\"> <b>Q&amp;A </b>";});} catch (e) {}
+try{jQuery("#tabs-1").each(function(i) {this.innerHTML = "<div><p> Q&amp;A<span> </span></p></div>";});} catch (e) {}
+try{jQuery("#authorname").each(function(i) {this.innerHTML = "dfernandez";});} catch (e) {}
+try{jQuery("#datetime").each(function(i) {this.innerHTML = "Wed, 19 Oct 2011 03:34:06 UTC";});} catch (e) {}
+jQuery(document).ready(function() {delete CKEDITOR.instances['respdetails'];delete CKEDITOR.instances['editdetails'];$('#respdetails').ckeditor();$('#editdetails').ckeditor();;});, List((Content-Length,8129), (Content-Type,text/javascript; charset=utf-8)), List(), 200)
+2011-10-19 00:34:09,539 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 151 Milliseconds
+2011-10-19 00:35:02,559 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(__lift__GC -> List(_))
+2011-10-19 00:35:02,564 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 9 Milliseconds
+2011-10-19 00:36:17,580 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(__lift__GC -> List(_))
+2011-10-19 00:36:17,584 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 8 Milliseconds
+2011-10-19 00:37:32,599 [2046375628@qtp-1876332795-2] DEBUG comet_trace - AJAX Request: 1pa5k3zs75sr51raavfx9zulii Map(__lift__GC -> List(_))
+2011-10-19 00:37:32,603 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056184KUYAII/ returned 200, took 8 Milliseconds
+2011-10-19 00:38:28,722 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin returned 404, took 15 Milliseconds
+2011-10-19 00:38:30,732 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin returned 404, took 8 Milliseconds
+2011-10-19 00:38:54,407 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/index returned 302, took 45 Milliseconds
+2011-10-19 00:38:54,485 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 74 Milliseconds
+2011-10-19 00:38:54,523 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:40:22,637 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /edituser returned 200, took 97 Milliseconds
+2011-10-19 00:40:22,678 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 8 Milliseconds
+2011-10-19 00:40:39,777 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /logout returned 302, took 22 Milliseconds
+2011-10-19 00:40:39,785 [pool-8-thread-4] INFO  net.liftweb.http.CometActor - The CometActor org.topicquests.comet.ChatComet@7a7a97e8 Received Shutdown
+2011-10-19 00:40:39,805 [pool-8-thread-5] INFO  net.liftweb.http.CometActor - The CometActor org.topicquests.comet.ConversationComet@2c7405fe Received Shutdown
+2011-10-19 00:40:39,893 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 109 Milliseconds
+2011-10-19 00:40:39,931 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:40:41,240 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /login returned 200, took 32 Milliseconds
+2011-10-19 00:40:41,279 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 4 Milliseconds
+2011-10-19 00:40:44,424 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /login returned 302, took 38 Milliseconds
+2011-10-19 00:40:44,494 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 67 Milliseconds
+2011-10-19 00:40:44,525 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 9 Milliseconds
+2011-10-19 00:40:46,941 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/ returned 200, took 77 Milliseconds
+2011-10-19 00:40:46,999 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:40:48,651 [2046375628@qtp-1876332795-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 356 Milliseconds
+2011-10-19 00:40:48,720 [1304131589@qtp-1876332795-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 11 Milliseconds
+2011-10-19 00:40:49,090 [1398202741@qtp-1876332795-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 395 Milliseconds
+2011-10-19 00:40:49,118 [1054555454@qtp-1876332795-8] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 416 Milliseconds
+2011-10-19 00:40:49,118 [574741767@qtp-1876332795-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 410 Milliseconds
+2011-10-19 00:40:49,118 [70819105@qtp-1876332795-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 412 Milliseconds
+2011-10-19 00:42:03,769 [70819105@qtp-1876332795-5] DEBUG comet_trace - AJAX Request: i3c2w3h94r3v11xa4x8a3ykbi Map(__lift__GC -> List(_))
+2011-10-19 00:42:03,775 [70819105@qtp-1876332795-5] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056288KPMXJF/ returned 200, took 9 Milliseconds
+2011-10-19 00:43:00,123 [main] DEBUG net.liftweb.http.LiftServlet - Destroyed Lift handler.
+2011-10-19 00:43:07,840 [main] INFO  bootstrap.liftweb.Boot - STARTING Full(mysql)
+2011-10-19 00:43:07,916 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for User
+2011-10-19 00:43:07,918 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:43:08,027 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Node
+2011-10-19 00:43:08,027 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:43:08,058 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for IBISConversation
+2011-10-19 00:43:08,058 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:43:08,072 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for ChatLine
+2011-10-19 00:43:08,073 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:43:08,085 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Image
+2011-10-19 00:43:08,086 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:43:08,102 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Invitee
+2011-10-19 00:43:08,102 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:43:08,282 [main] DEBUG net.liftweb.mapper.Schemifier - Starting schemify. write=true, structureOnly=false, dbId=ConnectionIdentifier(lift), schema=ibisliftuser@localhost, tables=List(users, conversation_nodes, conversations, chatline, images, invitees)
+2011-10-19 00:43:08,283 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table users
+2011-10-19 00:43:08,284 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversation_nodes
+2011-10-19 00:43:08,284 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversations
+2011-10-19 00:43:08,284 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table chatline
+2011-10-19 00:43:08,285 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table images
+2011-10-19 00:43:08,285 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table invitees
+2011-10-19 00:43:08,781 [main] DEBUG net.liftweb.mapper.Schemifier - Executing DDL statements
+2011-10-19 00:43:08,782 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table users
+2011-10-19 00:43:08,782 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversation_nodes
+2011-10-19 00:43:08,783 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversations
+2011-10-19 00:43:08,783 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table chatline
+2011-10-19 00:43:08,783 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table images
+2011-10-19 00:43:08,784 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table invitees
+2011-10-19 00:43:18,977 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F619476056288KPMXJF/ returned 200, took 106 Milliseconds
+2011-10-19 00:43:19,129 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 302, took 141 Milliseconds
+2011-10-19 00:43:19,580 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 446 Milliseconds
+2011-10-19 00:43:19,624 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 21 Milliseconds
+2011-10-19 00:43:35,269 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /login returned 200, took 80 Milliseconds
+2011-10-19 00:43:35,294 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:43:38,251 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /login returned 302, took 78 Milliseconds
+2011-10-19 00:43:38,947 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 97 Milliseconds
+2011-10-19 00:43:38,986 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:43:39,868 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/ returned 200, took 148 Milliseconds
+2011-10-19 00:43:39,941 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 9 Milliseconds
+2011-10-19 00:43:41,351 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 237 Milliseconds
+2011-10-19 00:43:41,380 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:43:41,525 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 104 Milliseconds
+2011-10-19 00:43:41,525 [773248031@qtp-1677073317-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 93 Milliseconds
+2011-10-19 00:43:41,542 [1289413694@qtp-1677073317-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 114 Milliseconds
+2011-10-19 00:43:41,549 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 123 Milliseconds
+2011-10-19 00:43:45,388 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/edit/BOCP4RNOIEKZARMV3G5SAAOFPD4MKDO3 returned 200, took 189 Milliseconds
+2011-10-19 00:43:45,452 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:44:48,686 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 188 Milliseconds
+2011-10-19 00:44:48,809 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 62 Milliseconds
+2011-10-19 00:44:48,880 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 78 Milliseconds
+2011-10-19 00:44:48,889 [1281524786@qtp-1677073317-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:44:48,919 [438120416@qtp-1677073317-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 108 Milliseconds
+2011-10-19 00:44:48,985 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 104 Milliseconds
+2011-10-19 00:44:51,195 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/edit/WFTPJYZKH0GFX4KQRKYIIZ105PW2LXR2 returned 200, took 73 Milliseconds
+2011-10-19 00:44:51,236 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:45:00,794 [348042924@qtp-1677073317-7] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=Image, entity=org.topicquests.model.Image={id=-1,mimeType=image/jpeg,uniqueId=4LNJKH1AXIB1SLR4,image=[B@3ff78ad9,saveTime=1318995900794}
+2011-10-19 00:45:00,883 [348042924@qtp-1677073317-7] DEBUG net.liftweb.mapper.MetaMapper - Validating dbName=User, entity=org.topicquests.model.User={id=1,userName=admin,email=super@admin.com,password=*******,locale=es_AR,uniqueId=WFTPJYZKH0GFX4KQRKYIIZ105PW2LXR2,firstName=Super,lastName=Admin,superUser=true,validated=true,picture=12,timezone=America/Buenos_Aires,createdDate=1318995891164}
+2011-10-19 00:45:01,201 [348042924@qtp-1677073317-7] DEBUG net.liftweb.mapper.MetaMapper - Validated dbName=User, entity=org.topicquests.model.User={id=1,userName=admin,email=super@admin.com,password=*******,locale=es_AR,uniqueId=WFTPJYZKH0GFX4KQRKYIIZ105PW2LXR2,firstName=Super,lastName=Admin,superUser=true,validated=true,picture=12,timezone=America/Buenos_Aires,createdDate=1318995891164}, result=List()
+2011-10-19 00:45:01,202 [348042924@qtp-1677073317-7] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=User, entity=org.topicquests.model.User={id=1,userName=admin,email=super@admin.com,password=*******,locale=es_AR,uniqueId=WFTPJYZKH0GFX4KQRKYIIZ105PW2LXR2,firstName=Super,lastName=Admin,superUser=true,validated=true,picture=12,timezone=America/Buenos_Aires,createdDate=1318995891164}
+2011-10-19 00:45:01,232 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /admin/user/edit/WFTPJYZKH0GFX4KQRKYIIZ105PW2LXR2 returned 302, took 2457 Milliseconds
+2011-10-19 00:45:01,418 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 163 Milliseconds
+2011-10-19 00:45:01,478 [438120416@qtp-1677073317-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 8 Milliseconds
+2011-10-19 00:45:01,509 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 67 Milliseconds
+2011-10-19 00:45:06,961 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user returned 404, took 12 Milliseconds
+2011-10-19 00:45:09,015 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 214 Milliseconds
+2011-10-19 00:45:09,062 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:45:09,219 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 88 Milliseconds
+2011-10-19 00:45:09,225 [438120416@qtp-1677073317-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 106 Milliseconds
+2011-10-19 00:45:09,254 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 135 Milliseconds
+2011-10-19 00:45:09,255 [1281524786@qtp-1677073317-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 86 Milliseconds
+2011-10-19 00:45:09,285 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 146 Milliseconds
+2011-10-19 00:45:14,944 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/edit/ZCYSQBOFO0IMJKGFHB0C3ECJX43RJTBE returned 200, took 136 Milliseconds
+2011-10-19 00:45:15,017 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:45:19,517 [848371944@qtp-1677073317-0] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=Image, entity=org.topicquests.model.Image={id=-1,mimeType=image/jpeg,uniqueId=WNCHXUBMTBJLEYEX,image=[B@2ad5934b,saveTime=1318995919517}
+2011-10-19 00:45:19,536 [848371944@qtp-1677073317-0] DEBUG net.liftweb.mapper.MetaMapper - Validating dbName=User, entity=org.topicquests.model.User={id=7,userName=aaaaaaaa,email=ddd@dadas.com,password=*******,locale=es_AR,uniqueId=ZCYSQBOFO0IMJKGFHB0C3ECJX43RJTBE,firstName=,lastName=,superUser=false,validated=true,picture=13,timezone=America/Buenos_Aires,createdDate=1315214759580}
+2011-10-19 00:45:19,630 [848371944@qtp-1677073317-0] DEBUG net.liftweb.mapper.MetaMapper - Validated dbName=User, entity=org.topicquests.model.User={id=7,userName=aaaaaaaa,email=ddd@dadas.com,password=*******,locale=es_AR,uniqueId=ZCYSQBOFO0IMJKGFHB0C3ECJX43RJTBE,firstName=,lastName=,superUser=false,validated=true,picture=13,timezone=America/Buenos_Aires,createdDate=1315214759580}, result=List()
+2011-10-19 00:45:19,632 [848371944@qtp-1677073317-0] DEBUG net.liftweb.mapper.MetaMapper - Saving dbName=User, entity=org.topicquests.model.User={id=7,userName=aaaaaaaa,email=ddd@dadas.com,password=*******,locale=es_AR,uniqueId=ZCYSQBOFO0IMJKGFHB0C3ECJX43RJTBE,firstName=,lastName=,superUser=false,validated=true,picture=13,timezone=America/Buenos_Aires,createdDate=1315214759580}
+2011-10-19 00:45:19,650 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /admin/user/edit/ZCYSQBOFO0IMJKGFHB0C3ECJX43RJTBE returned 302, took 257 Milliseconds
+2011-10-19 00:45:19,827 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 174 Milliseconds
+2011-10-19 00:45:19,863 [1281524786@qtp-1677073317-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:45:19,892 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 36 Milliseconds
+2011-10-19 00:45:19,969 [438120416@qtp-1677073317-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 52 Milliseconds
+2011-10-19 00:45:19,969 [1281524786@qtp-1677073317-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 55 Milliseconds
+2011-10-19 00:45:19,989 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 69 Milliseconds
+2011-10-19 00:45:19,997 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 70 Milliseconds
+2011-10-19 00:45:20,001 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 87 Milliseconds
+2011-10-19 00:45:23,047 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user returned 404, took 6 Milliseconds
+2011-10-19 00:45:29,441 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 195 Milliseconds
+2011-10-19 00:45:29,477 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:45:29,595 [348042924@qtp-1677073317-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 70 Milliseconds
+2011-10-19 00:45:29,598 [1497994359@qtp-1677073317-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 74 Milliseconds
+2011-10-19 00:45:29,601 [438120416@qtp-1677073317-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 78 Milliseconds
+2011-10-19 00:45:29,603 [848371944@qtp-1677073317-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 85 Milliseconds
+2011-10-19 00:45:29,616 [1281524786@qtp-1677073317-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 100 Milliseconds
+2011-10-19 00:45:29,642 [1488176393@qtp-1677073317-8] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 101 Milliseconds
+2011-10-19 00:46:44,590 [1488176393@qtp-1677073317-8] DEBUG comet_trace - AJAX Request: tegsmu6x9r0fp8onbn63ev2o Map(__lift__GC -> List(_))
+2011-10-19 00:46:44,601 [1488176393@qtp-1677073317-8] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F736401197207DUBMCN/ returned 200, took 19 Milliseconds
+2011-10-19 00:47:02,501 [main] DEBUG net.liftweb.http.LiftServlet - Destroyed Lift handler.
+2011-10-19 00:47:11,220 [main] INFO  bootstrap.liftweb.Boot - STARTING Full(mysql)
+2011-10-19 00:47:11,289 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for User
+2011-10-19 00:47:11,291 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:47:11,420 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Node
+2011-10-19 00:47:11,421 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:47:11,459 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for IBISConversation
+2011-10-19 00:47:11,460 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:47:11,477 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for ChatLine
+2011-10-19 00:47:11,477 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:47:11,492 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Image
+2011-10-19 00:47:11,493 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:47:11,513 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Invitee
+2011-10-19 00:47:11,514 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:47:11,756 [main] DEBUG net.liftweb.mapper.Schemifier - Starting schemify. write=true, structureOnly=false, dbId=ConnectionIdentifier(lift), schema=ibisliftuser@localhost, tables=List(users, conversation_nodes, conversations, chatline, images, invitees)
+2011-10-19 00:47:11,758 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table users
+2011-10-19 00:47:11,759 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversation_nodes
+2011-10-19 00:47:11,759 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversations
+2011-10-19 00:47:11,759 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table chatline
+2011-10-19 00:47:11,760 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table images
+2011-10-19 00:47:11,760 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table invitees
+2011-10-19 00:47:12,392 [main] DEBUG net.liftweb.mapper.Schemifier - Executing DDL statements
+2011-10-19 00:47:12,394 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table users
+2011-10-19 00:47:12,395 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversation_nodes
+2011-10-19 00:47:12,395 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversations
+2011-10-19 00:47:12,395 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table chatline
+2011-10-19 00:47:12,396 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table images
+2011-10-19 00:47:12,396 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table invitees
+2011-10-19 00:47:15,873 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /index returned 200, took 801 Milliseconds
+2011-10-19 00:47:15,934 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 23 Milliseconds
+2011-10-19 00:47:16,682 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /login returned 200, took 89 Milliseconds
+2011-10-19 00:47:16,716 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:47:19,765 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /login returned 302, took 69 Milliseconds
+2011-10-19 00:47:19,865 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 94 Milliseconds
+2011-10-19 00:47:20,114 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:47:21,715 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/ returned 200, took 66 Milliseconds
+2011-10-19 00:47:21,749 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:47:23,875 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 275 Milliseconds
+2011-10-19 00:47:23,906 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:47:24,086 [1794313817@qtp-1616963491-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 129 Milliseconds
+2011-10-19 00:47:24,096 [832300253@qtp-1616963491-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 136 Milliseconds
+2011-10-19 00:47:24,106 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 161 Milliseconds
+2011-10-19 00:47:24,131 [1202727204@qtp-1616963491-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 167 Milliseconds
+2011-10-19 00:47:24,145 [1746515998@qtp-1616963491-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 182 Milliseconds
+2011-10-19 00:47:24,158 [1725619927@qtp-1616963491-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 187 Milliseconds
+2011-10-19 00:47:28,368 [1725619927@qtp-1616963491-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user returned 404, took 77 Milliseconds
+2011-10-19 00:47:30,955 [1725619927@qtp-1616963491-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user returned 404, took 5 Milliseconds
+2011-10-19 00:47:32,971 [1725619927@qtp-1616963491-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 223 Milliseconds
+2011-10-19 00:47:33,044 [1725619927@qtp-1616963491-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:47:33,171 [1746515998@qtp-1616963491-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 88 Milliseconds
+2011-10-19 00:47:33,190 [1202727204@qtp-1616963491-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 100 Milliseconds
+2011-10-19 00:47:33,194 [1794313817@qtp-1616963491-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 94 Milliseconds
+2011-10-19 00:47:33,207 [1725619927@qtp-1616963491-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 125 Milliseconds
+2011-10-19 00:47:33,215 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 124 Milliseconds
+2011-10-19 00:47:33,216 [1817982248@qtp-1616963491-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 111 Milliseconds
+2011-10-19 00:48:48,119 [1817982248@qtp-1616963491-7] DEBUG comet_trace - AJAX Request: o470yycco12pnsu22a75j36n Map(__lift__GC -> List(_))
+2011-10-19 00:48:48,128 [1817982248@qtp-1616963491-7] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F22962594138YTGI21/ returned 200, took 14 Milliseconds
+2011-10-19 00:50:03,182 [2047324099@qtp-1616963491-0] DEBUG comet_trace - AJAX Request: o470yycco12pnsu22a75j36n Map(__lift__GC -> List(_))
+2011-10-19 00:50:03,186 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F22962594138YTGI21/ returned 200, took 25 Milliseconds
+2011-10-19 00:51:18,200 [2047324099@qtp-1616963491-0] DEBUG comet_trace - AJAX Request: o470yycco12pnsu22a75j36n Map(__lift__GC -> List(_))
+2011-10-19 00:51:18,202 [2047324099@qtp-1616963491-0] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F22962594138YTGI21/ returned 200, took 4 Milliseconds
+2011-10-19 00:52:33,238 [1817982248@qtp-1616963491-7] DEBUG comet_trace - AJAX Request: o470yycco12pnsu22a75j36n Map(__lift__GC -> List(_))
+2011-10-19 00:52:33,241 [1817982248@qtp-1616963491-7] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /ajax_request/F22962594138YTGI21/ returned 200, took 7 Milliseconds
+2011-10-19 00:52:57,571 [main] DEBUG net.liftweb.http.LiftServlet - Destroyed Lift handler.
+2011-10-19 00:53:10,660 [main] INFO  bootstrap.liftweb.Boot - STARTING Full(mysql)
+2011-10-19 00:53:10,947 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for User
+2011-10-19 00:53:10,970 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:53:11,774 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Node
+2011-10-19 00:53:11,784 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:53:12,061 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for IBISConversation
+2011-10-19 00:53:12,061 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:53:12,292 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for ChatLine
+2011-10-19 00:53:12,293 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:53:12,388 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Image
+2011-10-19 00:53:12,388 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:53:12,514 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Invitee
+2011-10-19 00:53:12,515 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:53:12,850 [main] DEBUG net.liftweb.mapper.Schemifier - Starting schemify. write=true, structureOnly=false, dbId=ConnectionIdentifier(lift), schema=ibisliftuser@localhost, tables=List(users, conversation_nodes, conversations, chatline, images, invitees)
+2011-10-19 00:53:12,854 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table users
+2011-10-19 00:53:12,855 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversation_nodes
+2011-10-19 00:53:12,855 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversations
+2011-10-19 00:53:12,856 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table chatline
+2011-10-19 00:53:12,856 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table images
+2011-10-19 00:53:12,857 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table invitees
+2011-10-19 00:53:13,680 [main] DEBUG net.liftweb.mapper.Schemifier - Executing DDL statements
+2011-10-19 00:53:13,682 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table users
+2011-10-19 00:53:13,683 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversation_nodes
+2011-10-19 00:53:13,683 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversations
+2011-10-19 00:53:13,684 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table chatline
+2011-10-19 00:53:13,684 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table images
+2011-10-19 00:53:13,685 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table invitees
+2011-10-19 00:53:15,889 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /index returned 200, took 1188 Milliseconds
+2011-10-19 00:53:16,074 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 80 Milliseconds
+2011-10-19 00:53:16,095 [1888100941@qtp-1884716572-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/json.js returned 304, took 121 Milliseconds
+2011-10-19 00:53:16,105 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/jquery.js returned 304, took 128 Milliseconds
+2011-10-19 00:53:16,104 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/screen.css returned 304, took 125 Milliseconds
+2011-10-19 00:53:16,102 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/print.css returned 304, took 179 Milliseconds
+2011-10-19 00:53:16,101 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/plugins/fancy-type/screen.css returned 304, took 175 Milliseconds
+2011-10-19 00:53:17,442 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /login returned 200, took 192 Milliseconds
+2011-10-19 00:53:17,506 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 11 Milliseconds
+2011-10-19 00:53:21,983 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /login returned 302, took 218 Milliseconds
+2011-10-19 00:53:22,103 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 112 Milliseconds
+2011-10-19 00:53:22,150 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 18 Milliseconds
+2011-10-19 00:53:23,740 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/ returned 200, took 108 Milliseconds
+2011-10-19 00:53:23,927 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:53:25,881 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 358 Milliseconds
+2011-10-19 00:53:25,950 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:53:26,173 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 163 Milliseconds
+2011-10-19 00:53:26,175 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 167 Milliseconds
+2011-10-19 00:53:26,180 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 172 Milliseconds
+2011-10-19 00:53:26,245 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 233 Milliseconds
+2011-10-19 00:53:26,303 [998504508@qtp-1884716572-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 278 Milliseconds
+2011-10-19 00:53:26,308 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 297 Milliseconds
+2011-10-19 00:53:28,151 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user returned 404, took 59 Milliseconds
+2011-10-19 00:53:46,786 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 338 Milliseconds
+2011-10-19 00:53:47,542 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:53:47,734 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 70 Milliseconds
+2011-10-19 00:53:47,765 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 103 Milliseconds
+2011-10-19 00:53:47,760 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 105 Milliseconds
+2011-10-19 00:53:47,759 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 76 Milliseconds
+2011-10-19 00:53:47,781 [998504508@qtp-1884716572-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 114 Milliseconds
+2011-10-19 00:53:47,800 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 129 Milliseconds
+2011-10-19 00:54:00,531 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 240 Milliseconds
+2011-10-19 00:54:00,568 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/screen.css returned 304, took 7 Milliseconds
+2011-10-19 00:54:00,574 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:54:00,579 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/jquery.js returned 304, took 14 Milliseconds
+2011-10-19 00:54:00,576 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/json.js returned 304, took 14 Milliseconds
+2011-10-19 00:54:00,573 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/plugins/fancy-type/screen.css returned 304, took 11 Milliseconds
+2011-10-19 00:54:00,576 [998504508@qtp-1884716572-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/print.css returned 304, took 8 Milliseconds
+2011-10-19 00:54:00,738 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 101 Milliseconds
+2011-10-19 00:54:00,760 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 119 Milliseconds
+2011-10-19 00:54:00,794 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 136 Milliseconds
+2011-10-19 00:54:00,808 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 165 Milliseconds
+2011-10-19 00:54:00,828 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 172 Milliseconds
+2011-10-19 00:54:00,865 [998504508@qtp-1884716572-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 220 Milliseconds
+2011-10-19 00:54:02,289 [998504508@qtp-1884716572-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 258 Milliseconds
+2011-10-19 00:54:02,339 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/json.js returned 304, took 4 Milliseconds
+2011-10-19 00:54:02,342 [998504508@qtp-1884716572-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/screen.css returned 304, took 7 Milliseconds
+2011-10-19 00:54:02,346 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/plugins/fancy-type/screen.css returned 304, took 10 Milliseconds
+2011-10-19 00:54:02,349 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:54:02,346 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/jquery.js returned 304, took 10 Milliseconds
+2011-10-19 00:54:02,352 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /classpath/blueprint/print.css returned 304, took 15 Milliseconds
+2011-10-19 00:54:02,547 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 104 Milliseconds
+2011-10-19 00:54:02,559 [1463075422@qtp-1884716572-8] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 92 Milliseconds
+2011-10-19 00:54:02,595 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 141 Milliseconds
+2011-10-19 00:54:02,600 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 140 Milliseconds
+2011-10-19 00:54:02,599 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 153 Milliseconds
+2011-10-19 00:54:02,599 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 153 Milliseconds
+2011-10-19 00:54:08,103 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user returned 404, took 30 Milliseconds
+2011-10-19 00:54:09,779 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 290 Milliseconds
+2011-10-19 00:54:09,840 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:54:10,065 [1247470190@qtp-1884716572-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 108 Milliseconds
+2011-10-19 00:54:10,081 [1463075422@qtp-1884716572-8] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 125 Milliseconds
+2011-10-19 00:54:10,088 [1047632354@qtp-1884716572-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 140 Milliseconds
+2011-10-19 00:54:10,097 [1655598801@qtp-1884716572-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 151 Milliseconds
+2011-10-19 00:54:10,113 [1012902977@qtp-1884716572-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 155 Milliseconds
+2011-10-19 00:54:10,141 [877739684@qtp-1884716572-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 195 Milliseconds
+2011-10-19 00:54:13,610 [main] DEBUG net.liftweb.http.LiftServlet - Destroyed Lift handler.
+2011-10-19 00:54:20,780 [main] INFO  bootstrap.liftweb.Boot - STARTING Full(mysql)
+2011-10-19 00:54:20,841 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for User
+2011-10-19 00:54:20,844 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:54:20,935 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Node
+2011-10-19 00:54:20,943 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:54:20,990 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for IBISConversation
+2011-10-19 00:54:20,990 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:54:21,002 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for ChatLine
+2011-10-19 00:54:21,003 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:54:21,014 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Image
+2011-10-19 00:54:21,014 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:54:21,037 [main] DEBUG net.liftweb.mapper.MetaMapper - Initializing MetaMapper for Invitee
+2011-10-19 00:54:21,038 [main] DEBUG net.liftweb.mapper.MetaMapper - Created FieldFinder for interface net.liftweb.mapper.MappedField
+2011-10-19 00:54:21,257 [main] DEBUG net.liftweb.mapper.Schemifier - Starting schemify. write=true, structureOnly=false, dbId=ConnectionIdentifier(lift), schema=ibisliftuser@localhost, tables=List(users, conversation_nodes, conversations, chatline, images, invitees)
+2011-10-19 00:54:21,260 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table users
+2011-10-19 00:54:21,269 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversation_nodes
+2011-10-19 00:54:21,269 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table conversations
+2011-10-19 00:54:21,270 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table chatline
+2011-10-19 00:54:21,270 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table images
+2011-10-19 00:54:21,272 [main] DEBUG net.liftweb.mapper.Schemifier - Running beforeSchemifier on table invitees
+2011-10-19 00:54:21,738 [main] DEBUG net.liftweb.mapper.Schemifier - Executing DDL statements
+2011-10-19 00:54:21,740 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table users
+2011-10-19 00:54:21,740 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversation_nodes
+2011-10-19 00:54:21,740 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table conversations
+2011-10-19 00:54:21,741 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table chatline
+2011-10-19 00:54:21,741 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table images
+2011-10-19 00:54:21,741 [main] DEBUG net.liftweb.mapper.Schemifier - Running afterSchemifier on table invitees
+2011-10-19 00:54:22,835 [707832240@qtp-1387786501-0] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /index returned 200, took 531 Milliseconds
+2011-10-19 00:54:22,902 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 29 Milliseconds
+2011-10-19 00:54:23,810 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /login returned 200, took 65 Milliseconds
+2011-10-19 00:54:23,843 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:54:27,518 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (POST) /login returned 302, took 72 Milliseconds
+2011-10-19 00:54:27,593 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) / returned 200, took 69 Milliseconds
+2011-10-19 00:54:27,619 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:54:29,142 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/ returned 200, took 125 Milliseconds
+2011-10-19 00:54:29,187 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 7 Milliseconds
+2011-10-19 00:54:31,097 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 228 Milliseconds
+2011-10-19 00:54:31,126 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 5 Milliseconds
+2011-10-19 00:54:31,286 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 119 Milliseconds
+2011-10-19 00:54:31,297 [523711499@qtp-1387786501-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 114 Milliseconds
+2011-10-19 00:54:31,306 [112247873@qtp-1387786501-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 117 Milliseconds
+2011-10-19 00:54:31,327 [386170942@qtp-1387786501-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 147 Milliseconds
+2011-10-19 00:54:31,351 [2016785262@qtp-1387786501-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 171 Milliseconds
+2011-10-19 00:54:31,361 [690203902@qtp-1387786501-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 182 Milliseconds
+2011-10-19 00:54:33,805 [690203902@qtp-1387786501-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /admin/user/list returned 200, took 251 Milliseconds
+2011-10-19 00:54:33,852 [690203902@qtp-1387786501-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /ajax_request/liftAjax.js returned 200, took 6 Milliseconds
+2011-10-19 00:54:33,982 [523711499@qtp-1387786501-6] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/GMVYKEUAET0RMRE5 returned 200, took 77 Milliseconds
+2011-10-19 00:54:33,989 [2016785262@qtp-1387786501-7] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/LY2Y3ICUAE4AIYVV returned 200, took 87 Milliseconds
+2011-10-19 00:54:34,004 [1590092110@qtp-1387786501-2] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/0U3B3QOJ0OIZKLKY returned 200, took 99 Milliseconds
+2011-10-19 00:54:34,005 [386170942@qtp-1387786501-4] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/WNCHXUBMTBJLEYEX returned 200, took 97 Milliseconds
+2011-10-19 00:54:34,010 [690203902@qtp-1387786501-3] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/4LNJKH1AXIB1SLR4 returned 200, took 110 Milliseconds
+2011-10-19 00:54:34,014 [112247873@qtp-1387786501-5] INFO  net.liftweb.util.TimeHelpers - Service request (GET) /image/45HXEG4RYRCNXULQ returned 200, took 97 Milliseconds
+2011-10-19 00:55:00,416 [main] DEBUG net.liftweb.http.LiftServlet - Destroyed Lift handler.

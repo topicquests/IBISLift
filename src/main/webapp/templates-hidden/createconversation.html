@@ -1,0 +1,48 @@
+<div id="createform" class="lift:Conversations.addresponse">
+    <legend>Create a Response to the Selected Node</legend>
+    <div id="resp_step1">
+        <div class="radio">
+            <fieldset>
+                <legend><span>Step1: Select a Node type (REQUIRED):<span>*</span> </span></legend>
+                <div>                                                                                                      
+                    <div id="ref" class="opt"><img src="/images/ibis/reference.png" /><div>Reference</div></div>
+                    <div id="con" class="opt"><img src="/images/ibis/minus.png" /><div>Con</div></div>
+                    <div id="pro" class="opt"><img src="/images/ibis/plus.png" /><div>Pro</div></div>
+                    <div id="idea" class="opt"><img src="/images/ibis/position.png" /><div>Idea</div></div>
+                    <div id="question" class="opt"><img src="/images/ibis/issue.png" /><div>Question</div></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div id="resp_step2" style="display:none">
+        <fieldset>
+            <div class="radio">
+                <fieldset>
+                    <legend><span>Node type (REQUIRED):<span>*</span> </span></legend>
+                    <div>
+                        Question<input type="radio" class="question"/><img src="/images/ibis/issue.png" />
+                        Idea<input type="radio" class="idea"/><img src="/images/ibis/position.png" />
+                        Pro<input type="radio" class="pro"/><img src="/images/ibis/plus.png" />
+                        Con<input type="radio" class="con"/><img src="/images/ibis/minus.png" />
+                        Reference<input type="radio" class="ref"/><img src="/images/ibis/reference.png" />
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend><span>State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>
+                    <label>Statement:<span>*</span></label>
+                    <input class="label"/>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Explain the Details (Optional)</legend>
+                    <input class="details"/>
+                </fieldset>
+            </div>
+        </fieldset>
+        <input class="submit" type="submit" value="Submit"/>
+        <div style="color:red" class="lift:Msgs?showAll=true"></div>
+    </div>
+</div>
