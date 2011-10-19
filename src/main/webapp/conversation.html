@@ -8,10 +8,18 @@
     <!--  <script type="text/javascript" src = "/scripts/ibis.js"></script> -->
     <script type="text/javascript" src="/scripts/jquery-columnnav-1.1.0.js"></script>
     <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/scripts/ckeditor/adapters/jquery.js"></script>
      <script type="text/javascript" class="lift:Chat.setscripts"></script>
     <script type="text/javascript">
         //<![CDATA[
         $(document).ready(function() {
+            $(".opt").live('click', function() {
+                var val = $(this).attr('id');
+                $('.' + val).click();
+                $('#resp_step1').hide();
+                $('#resp_step2').show();
+            });
 
             $("ul#myTree").columnNavigation({
                 containerPosition:"relative",
@@ -52,6 +60,7 @@
                 submitchat();
               }
              });
+        
 
 
         });

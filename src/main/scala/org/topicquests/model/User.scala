@@ -193,6 +193,26 @@ object User extends User with MetaMegaProtoUser[User] {
             "#submit" #> <input type="submit" value={S.??("send.it")} class="button save" />)(lostPasswordXhtml)
   }
 
+  override def passwordResetMailBody(user: User, resetLink: String) = {
+    (<html>
+        <head>
+          <title>{S.??("reset.password.confirmation")}</title>
+        </head>
+        <body>
+          <p>{S.??("dear")} {user.userName.is},
+            <br/>
+            <br/>
+            {S.??("click.reset.link")}
+            <br/><a href={resetLink}>{resetLink}</a>
+            <br/>
+            <br/>
+            {S.??("thank.you")}
+          </p>
+        </body>
+     </html>)
+  }
+
+
   def signupXhtml = {
     (<div class="cont">
       <div class="toptitle">

@@ -58,7 +58,7 @@ class Conversations extends Loggable {
    * @return the xml transformed
    *
    */
-  def updatenode(in: NodeSeq) : NodeSeq = {
+  def updatenode() = {
     var label = ""
     var details = ""
     var nodetype = ""
@@ -100,8 +100,21 @@ class Conversations extends Loggable {
     val radios: ChoiceHolder[String] = SHtml.radio(radmap,
       Full(nodetype),
       nodetype = _ )
+                 
+     "#editform" #> { in:NodeSeq => SHtml.ajaxForm((
+        ".question" #> radios(0) &
+        ".idea" #> radios(1) &
+        ".pro" #> radios(2) &
+        ".con" #> radios(3) &
+        ".ref" #> radios(4) &
+        ".label" #> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "editlabel", "maxlength" -> "200", "onkeyup" -> "return imposeMaxLength(this)") &
+        ".details"#> SHtml.textarea(details,  details = _ ,"cols" -> "79", "rows" -> "5", "id" -> "editdetails") &
+        ".submit [onclick]" #> SHtml.ajaxCall(JsRaw("$('#editdetails').ckeditorGet().getData()"), { x => details = x;}) &
+        ".submit" #> SHtml.ajaxSubmit("Save", process))(in)
+      )}
 
-    SHtml.ajaxForm(
+
+/*    SHtml.ajaxForm(
       bind("editentry", in,
         "question" -> radios(0),
         "idea" -> radios(1),
@@ -110,9 +123,11 @@ class Conversations extends Loggable {
         "ref" -> radios(4),
         "label" -> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "editlabel"),
         "details" -> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "editdetails"),
+        "submit [onclick]" -> SHtml.ajaxCall(JsRaw("$('#editdetails').ckeditorGet().getData()"), { x => details = x;}),
         "submit" -> SHtml.ajaxSubmit("Save", process)
         )
-      )    }
+      )*/
+  }
 
 
   /**Creates the bindings for the response node form
@@ -120,7 +135,7 @@ class Conversations extends Loggable {
    * @return the xml transformed
    *
    */
-  def addresponse(in: NodeSeq) : NodeSeq = {
+  def addresponse() = {
     var label = ""
     var details = ""
     var nodetype = ""
@@ -146,7 +161,7 @@ class Conversations extends Loggable {
           doRespond(nodetype,label,details,parentId, user)
           S.notice("Response saved")
           //Clears the inputs
-          JsRaw("$('#resplabel').val('')").cmd & JsRaw("$('#respdetails').val('')")
+          JsRaw("$('#resp_step1').show();$('#resp_step2').hide();$('#resplabel').val('');$('#respdetails').val('');")
         }
         case _ => Noop;
       }
@@ -157,7 +172,19 @@ class Conversations extends Loggable {
       Full("Question"),
       nodetype = _ )
 
-    SHtml.ajaxForm(
+     "#createform" #> { in:NodeSeq => SHtml.ajaxForm((
+        ".question" #> radios(0) &
+        ".idea" #> radios(1) &
+        ".pro" #> radios(2) &
+        ".con" #> radios(3) &
+        ".ref" #> radios(4) &
+        ".label" #> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resplabel", "maxlength" -> "200", "onkeyup" -> "return imposeMaxLength(this)") &
+        ".details"#> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "respdetails") &
+        ".submit [onclick]" #> SHtml.ajaxCall(JsRaw("$('#respdetails').ckeditorGet().getData()"), { x => details = x;}) &
+        ".submit" #> SHtml.ajaxSubmit("Save", process))(in)
+      )}
+
+    /*SHtml.ajaxForm(
       bind("entry", in,
         "question" -> radios(0),
         "idea" -> radios(1),
@@ -166,9 +193,10 @@ class Conversations extends Loggable {
         "ref" -> radios(4),
         "label" -> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resplabel"),
         "details" -> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "respdetails"),
+        /*"submit [onclick]" -> SHtml.ajaxCall(JsRaw("$('#respdetails').ckeditorGet().getData()"), { x => details = x;}),*/
         "submit" -> SHtml.ajaxSubmit("Respond", process)
         )
-      )
+      )*/
   }
 
   /**
@@ -177,7 +205,7 @@ class Conversations extends Loggable {
    * @param in  the xml to be transformed
    * @return the xml transformed
    */
-  def addnewconversation(in: NodeSeq) : NodeSeq = {
+  def addnewconversation() = {
 
     var title = ""
     var label = ""
@@ -199,7 +227,16 @@ class Conversations extends Loggable {
     val radios: ChoiceHolder[String] = SHtml.radio(radmap.keys.toList,
       Full("Question"),
       nodetype = _ )
-    bind("entry", in,
+
+        ".title" #> SHtml.text(title, title = _, "class" -> "required", "maxlength" -> "200") &
+        ".question" #> radios(0) &
+        ".idea" #> radios(1) &
+        ".label" #> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2", "maxlength" -> "200", "onkeyup" -> "return imposeMaxLength(this)") &
+        ".details"#> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "details") &        
+        ".submit" #> SHtml.submit("Save", process)
+      
+
+    /*bind("entry", in,
       "title" -> SHtml.text(title, title = _, "class" -> "required"),
       "question" -> radios(1),
       "idea" -> radios(0),
@@ -214,8 +251,9 @@ class Conversations extends Loggable {
         "style" -> "width:auto;",
         "cols" -> "68",
         "rows" -> "5"),
+      /*"submit [onclick]" -> SHtml.ajaxCall(JsRaw("ckeditor.getData()"), { x => details = x;}),*/
       "submit" -> SHtml.submit("Update", process)
-      )
+      )*/
 
   }
 

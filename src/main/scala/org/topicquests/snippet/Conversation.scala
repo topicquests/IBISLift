@@ -19,7 +19,8 @@ import org.topicquests.model._
 import scala._
 import collection.mutable.HashSet
 import scala.xml._
-import org.topicquests.util.LongHelper
+import org.jsoup.Jsoup
+import org.topicquests.util.{XHTMLHelper, LongHelper}
 
 
 /**
@@ -217,20 +218,19 @@ class Conversation extends Loggable {
    */
   def userCanEdit(con: org.topicquests.model.Node): Boolean = {
     logger.info("USERCANEDIT-1 "+con.children.length+" "+User.loggedIn_?)
-    if (con.children.length > 0)
-      return false
-    if (User.loggedIn_?) {
-      if (User.superUser_?)
-        return true
-      else {
+    if (User.superUser_?)
+      true
+    else if (con.children.length > 0)
+      false
+    else if (User.loggedIn_?) {
         var cid = con.creator.toLong
         var uid = User.currentUserId.openTheBox.toLong
         var ce: Boolean = cid == uid
         logger.info("USERCANEDIT-2 "+cid+" "+uid+" "+ce)
         return ce
-      }
     }
-    false
+    else
+      false
   }
 
   /**
@@ -251,26 +251,37 @@ class Conversation extends Loggable {
     val dat = getNodeDate(con)
     val nx = <span>{autname}</span>
     val dx = <span>{dat}</span>
-//println("XXXX "+nx+" | "+dx)
-    val det:String = con.details
+    val det = <div>{Unparsed(Jsoup.clean(con.details.is, XHTMLHelper.whiteList))}</div>
     //note: here, we add the "response" form when appropriate
-    if (userCanEdit(con)) {
+    val setHtmlJCmds = if (userCanEdit(con)) {
       SetHtml("tab2", myeditform) &
-      SetHtml("tab3", myform) &
-      SetHtml("imglabel", il.child) &  SetHtml("tabs-1", Text(det)) &
-      SetHtml("authorname", nx.child) & SetHtml("datetime", dx.child)
+      SetHtml("tab3", mycreateform) &
+      SetHtml("imglabel", il.child) &
+      SetHtml("tabs-1", det) &
+      SetHtml("authorname", nx.child) &
+      SetHtml("datetime", dx.child)
     } else if (userCanParticipate(con)) {
       SetHtml("tab2", new Text("Not available")) &
-      SetHtml("tab3", myform) &
-      SetHtml("imglabel", il.child) &  SetHtml("tabs-1", Text(det)) &
-      SetHtml("authorname", nx.child) & SetHtml("datetime", dx.child)
+      SetHtml("tab3", mycreateform) &
+      SetHtml("imglabel", il.child) &
+      SetHtml("tabs-1", det) &
+      SetHtml("authorname", nx.child) &
+      SetHtml("datetime", dx.child)
     } else {
       SetHtml("imglabel", il.child) &
-      SetHtml("tabs-1", Text(det)) &
+      SetHtml("tabs-1", det) &
       SetHtml("tab2", new Text("Not available")) &
       SetHtml("tab3", new Text("Not available")) &
-      SetHtml("authorname", nx.child) & SetHtml("datetime", dx.child)
-    }
+      SetHtml("authorname", nx.child) &
+     SetHtml("datetime", dx.child)
+    }                                                                         
+    val prepareCkEditorJCmds = OnLoad(JsRaw(
+    "delete CKEDITOR.instances['respdetails'];" +
+    "delete CKEDITOR.instances['editdetails'];" +
+    "$('#respdetails').ckeditor();" +
+    "$('#editdetails').ckeditor();"));
+
+    setHtmlJCmds & prepareCkEditorJCmds
   }
 
   def getAuthorName(con: User): String = {
@@ -293,7 +304,10 @@ class Conversation extends Loggable {
    * An eventual third condition is this:
    * <li>The user is <em>qualified</em> to participate in the conversation</li>
    */
-  val myform = XML.loadString("""
+  val mycreateform =  Templates(List("/templates-hidden/createconversation")).openOr(<div></div>)
+  
+
+ /* val myform = XML.loadString("""
     <lift:Conversations.addresponse>
      <fieldset>
       <div>
@@ -329,14 +343,15 @@ class Conversation extends Loggable {
      <entry:submit></entry:submit>
      <div style="color:red" class="lift:Msgs?showAll=true"></div>
     </fieldset>
-   </lift:Conversations.addresponse>""")
+   </lift:Conversations.addresponse>""")*/
 
 
   /**
    * Returns a NodeSeq that represents the "Edit" form in the
    * "Edit" tab.
    */
-  val myeditform = XML.loadString("""
+  val myeditform =  Templates(List("/templates-hidden/editconversation")).openOr(<div></div>)
+  /*val myeditform = XML.loadString("""
     <lift:Conversations.updatenode>
      <fieldset>
       <div>
@@ -372,7 +387,7 @@ class Conversation extends Loggable {
      <editentry:submit></editentry:submit>
      <div style="color:red" class="lift:Msgs?showAll=true"></div>
     </fieldset>
-   </lift:Conversations.updatenode>""")
+   </lift:Conversations.updatenode>""")*/
 
 
 }

@@ -21,6 +21,8 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
     "org.scala-tools.testing" %% "specs" % "1.6.8" % "test",
     "com.h2database" % "h2" % "1.2.147",
     "mysql" % "mysql-connector-java" % "5.1.12" % "compile->default",
-    "org.apache.sanselan" % "sanselan" % "0.97-incubator"
+    "org.apache.sanselan" % "sanselan" % "0.97-incubator",
+    "org.slf4j" % "slf4j-log4j12" % "1.6.1",
+    "org.jsoup" % "jsoup" % "1.5.1"
   ) ++ super.libraryDependencies
 }

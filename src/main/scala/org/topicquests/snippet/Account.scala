@@ -16,20 +16,20 @@ class Account {
 
   def listUsers = {
 
-    def delete (user : User) {
-      user.delete_!
-    }
 
-    ".user" #> User.findAll().map({user =>
-        ".firstName *" #> <img src={if(user.picture.obj.isDefined) user.picture.obj.open_!.imageUrl else "/images/userimage.png"} alt="User Picture"/> &
-        ".firstName *" #> user.firstName.is &
-        ".lastName *" #> user.lastName.is &
-        ".email *" #> user.email.is &
-        ".username *" #> user.userName.is &
-        ".validated *" #> user.validated.is &
-        ".superuser *" #> user.superUser.is &
-        ".edit *" #> SHtml.link("/admin/user/edit/" + user.uniqueId.is, () => {}, Text("Edit")) &
-        ".delete *" #> SHtml.link("/admin/user", () => {}, Text("Delete"))
+
+    ".user" #> User.findAll().map(user => {
+      def delete () {
+        user.delete_!
+      }
+
+      ".picture *" #> <img src={if(user.picture.obj.isDefined) user.picture.obj.open_!.imageUrl else "/images/userimage.png"} alt="User Picture"/> &
+              ".email *" #> user.email.is &
+              ".username *" #> user.userName.is &
+              ".validated *" #> user.validated.is &
+              ".superuser *" #> user.superUser.is &
+              ".edit *" #> SHtml.link("/admin/user/edit/" + user.uniqueId.is, () => {}, Text("Edit")) &
+              ".delete *" #> SHtml.link("/admin/user/list", delete _, Text("Delete"))
     });
 
   }
@@ -86,15 +86,13 @@ class Account {
       }
     }
 
-    "#firstname" #> SHtml.text(user.firstName.is, user.firstName(_) , "size" -> "30", "maxlength" -> "256" ) &
-    "#lastname" #> SHtml.text(user.lastName.is, user.lastName(_) , "size" -> "30", "maxlength" -> "256" ) &
     "#email" #> SHtml.text(user.email.is, user.email(_) , "size" -> "30", "maxlength" -> "256" ) &
-    "#username" #> SHtml.text(user.userName.is, user.userName(_) , "size" -> "30", "maxlength" -> "256" ) &
-    "#passworddiv" #> (if(user.saved_?) ("*" #> (Empty: Box[String])) else ("#password" #> user.password._toForm)) &
-    "#validated" #> SHtml.checkbox(user.validated.is, user.validated(_) ) &
-    "#admin" #> SHtml.checkbox(user.superUser.is, user.superUser(_) ) &
-                    "#picture" #> SHtml.fileUpload(fh => photoFileHolder = Full(fh)) &
-                    "#submit" #> SHtml.submit("Save", saveuser _, "class" -> "button save")
+            "#username" #> SHtml.text(user.userName.is, user.userName(_) , "size" -> "30", "maxlength" -> "256" ) &
+            "#passworddiv" #> (if(user.saved_?) ("*" #> (Empty: Box[String])) else ("#password" #> user.password._toForm)) &
+            "#validated" #> SHtml.checkbox(user.validated.is, user.validated(_) ) &
+            "#admin" #> SHtml.checkbox(user.superUser.is, user.superUser(_) ) &
+            "#picture" #> SHtml.fileUpload(fh => photoFileHolder = Full(fh)) &
+            "#submit" #> SHtml.submit("Save", saveuser _, "class" -> "button save")
   }
 
 }

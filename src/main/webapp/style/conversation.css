@@ -9,3 +9,5 @@
 .message-timestamp {font-size: .77em;line-height: 1.0em;color: #AAA;height: 12px;}
 .message-profile-name {font-weight: bold;}
 .message-profile-image {position: absolute;top: 10px;left: 2px;}
+.opt{ float: left;margin: 80px 40px;text-align: center;}
+.opt:hover {cursor:pointer;}
