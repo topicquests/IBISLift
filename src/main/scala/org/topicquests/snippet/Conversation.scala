@@ -20,7 +20,7 @@ import scala._
 import collection.mutable.HashSet
 import scala.xml._
 import org.jsoup.Jsoup
-import org.topicquests.util.{XHTMLHelper, LongHelper}
+import org.topicquests.util.{XHTMLHelper, LongHelper, StringHelper}
 
 
 /**
@@ -246,7 +246,7 @@ class Conversation extends Loggable {
     //  save parentId in case a child node is added
     S.set("nodeid", param)
     val ux: User = User.find(con.creator.toString()).openTheBox
-    val il = <span><img src={"/images/ibis/" + con.largeImage}/> <b>{con.label}</b></span>
+    val il = <span><img src={"/images/ibis/" + con.largeImage}/> <b>{StringHelper.stripCdata(con.label)}</b></span>
     val autname = getAuthorName(ux)
     val dat = getNodeDate(con)
     val nx = <span>{autname}</span>
@@ -284,6 +284,7 @@ class Conversation extends Loggable {
     setHtmlJCmds & prepareCkEditorJCmds
   }
 
+  
   def getAuthorName(con: User): String = {
     val name = con.userName.toString()
     name

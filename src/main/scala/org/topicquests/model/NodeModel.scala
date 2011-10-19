@@ -25,7 +25,7 @@ class NodeModel extends Loggable {
   def createNode(nodetype: String, label: String, details: String, user: User): Node = {
     var node : org.topicquests.model.Node = org.topicquests.model.Node.create 
     var date: Date = new Date()
-    node.label(label)
+    node.label(surroundCdata(label))
     node.details(details)
     node.date(date)
     node.creator(user)
@@ -39,10 +39,20 @@ class NodeModel extends Loggable {
     node
   }
   
+  def surroundCdata(label: String): String = {
+    println("SURROUND- "+label)
+    var result = label
+    if (!label.startsWith("<!")) {
+    	result  = "<![CDATA["+label+"]]>"
+    } 
+    println("SURROUND+ "+result)
+   
+    result
+  }
   def updateNode(nodetype: String, label: String, details: String, user: User, node: org.topicquests.model.Node) = {
 	  logger.info("UPDATING "+nodetype)
     var date: Date = new Date()
-    node.label(label)
+    node.label(surroundCdata(label))
     node.details(details)
     node.date(date)
 //    node.creator(user)

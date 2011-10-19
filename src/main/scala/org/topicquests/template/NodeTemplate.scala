@@ -7,6 +7,7 @@ import net.liftweb.http.Templates
 import xml.{NodeSeq, Text}
 import org.topicquests.model.Node
 import net.liftweb.common.Loggable
+import org.topicquests.util.StringHelper
 
 /**
  * @author dfernandez
@@ -30,7 +31,7 @@ object NodeTemplate extends Loggable {
       "#node [id]" #> ("node_" + node.uniqueId.is.toString)  &
       ".nodehref [href]" #> node.id.toString() &
       ".nodeimg [src]" #> ("/images/ibis/" + node.smallImage) &
-      ".nodetitle *" #> node.label.toString()
+      ".nodetitle *" #> StringHelper.stripCdata(node.label.toString())
      )(nodeXHTML)
   }
 

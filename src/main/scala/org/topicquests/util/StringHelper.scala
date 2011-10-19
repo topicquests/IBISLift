@@ -39,5 +39,17 @@ object StringHelper {
 
   }
 
+  def stripCdata(label: String): String = {
+    println("STRIPPING- "+label)
+    var result = label
+    if (label.startsWith("<!")) {
+      result = label.substring("<![CDATA[".length())
+    println("STRIPPING-1 "+result)
+      result = result.substring(0, result.length()-"]]>".length())
+    }
+    println("STRIPPING+ "+result)
+    result
+  }
+
 
 }

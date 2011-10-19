@@ -47,7 +47,7 @@ class Boot extends Loggable {
         Props.get("db.url") openOr
                 "jdbc:h2:lift_proto.db;AUTO_SERVER=TRUE",
         Props.get("db.user"), Props.get("db.password"))
-
+println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
       LiftRules.unloadHooks.append(vendor.closeAllConnections_! _)
 
       DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
