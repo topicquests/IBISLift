@@ -331,13 +331,6 @@
 				
 				scrollToLocale( difference );
 			}
-			
-			return false;
-		});
-		
-		// Double decides on task.
-		$('.nodehref').live('dblclick', function(){
-			
 			// If there is no callback function, use the existing link
 			if( configuration.callBackFunction == null )
 			{
@@ -349,6 +342,24 @@
 				var linkObject = $(this);
 				configuration.callBackFunction( linkObject );
 			}
+
+			return false;
+		});
+		
+		// Double decides on task.
+		$('.nodehref').live('dblclick', function(){
+			
+			// If there is no callback function, use the existing link
+//			if( configuration.callBackFunction == null )
+//			{
+//				window.location = $(this).attr("href");
+//			}
+//			else
+//			{
+//			// Otherwise attach this link to a variable and send it to the callBackFunction for processing
+//				var linkObject = $(this);
+//				configuration.callBackFunction( linkObject );
+//			}
 		});
 		
 		// Scrolls the main view
