@@ -9,6 +9,7 @@ import collection.mutable.HashSet
 import org.topicquests.model.SessionActiveNodes
 import xml.Text
 import net.liftweb.http.js.JE.JsRaw
+import org.topicquests.util.StringHelper
 
 /**
  * @author dfernandez
@@ -48,7 +49,7 @@ class ConversationComet extends CometActor with CometListener {
       if(SessionActiveNodes.isDefined && SessionActiveNodes.open_!.contains(node.id)){
         this.partialUpdate(OnLoad(
           (
-                  (JqJE.Jq("#node_" + node.uniqueId + " > .nodehref > .nodetitle") ~> JqJE.JqHtml(Text(node.label.is))).cmd &
+                  (JqJE.Jq("#node_" + node.uniqueId + " > .nodehref > .nodetitle") ~> JqJE.JqHtml(Text(StringHelper.stripCdata(node.label.is)))).cmd &
                   JsRaw("$('#node_" + node.uniqueId + " > .nodehref > .nodeimg').attr('src','/images/ibis/" + node.smallImage + "')").cmd
 
           )))

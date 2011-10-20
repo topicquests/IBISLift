@@ -20,6 +20,7 @@ import net.liftweb.http.js.JsCmds._
 import org.topicquests.model.NodeModel
 import js.jquery.JqJE
 import org.topicquests.comet.{EditNodeAction, ConversationCometServer, AddNodeAction}
+import org.topicquests.util.StringHelper
 
 /**
  * @author park
@@ -79,7 +80,7 @@ class Conversations extends Loggable {
     // grab the node
     var thenode: org.topicquests.model.Node = IBISNodeLoc(nodeId).record
     nodetype = thenode.nodetype.toString()
-    label = thenode.label.toString()
+    label = StringHelper.stripCdata(thenode.label.toString())
     details = thenode.details.toString()
 
     def process(): JsCmd = {

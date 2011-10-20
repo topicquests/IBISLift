@@ -25,6 +25,10 @@ object XHTMLHelper   {
     whiteList.addAttributes("iframe", "title");
     whiteList.addAttributes("iframe", "width");
     whiteList.addAttributes("iframe", "height");
+    whiteList.addAttributes("h1", "style");
+    whiteList.addAttributes("h2", "style");
+    whiteList.addAttributes("h3", "style");
+    whiteList.addAttributes("h4", "style");
 
   whiteList.addAttributes("p", "style");
   whiteList.addAttributes("a", "name");  
