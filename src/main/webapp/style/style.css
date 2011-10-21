@@ -127,6 +127,13 @@ fieldset {
     padding: 0 0.5em 0.5em;
 }
 
+nodetags {
+    float: left;
+    width: 10em;
+    text-align: right;
+    margin-right: 1em;
+}
+
 .radio, .date {
     position: relative;
 }
