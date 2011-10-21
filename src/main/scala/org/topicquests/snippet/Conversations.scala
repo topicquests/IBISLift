@@ -63,6 +63,7 @@ class Conversations extends Loggable {
     var label = ""
     var details = ""
     var nodetype = ""
+    var tags = ""
     // set in Conversation.show
     var x = "-1"
 
@@ -87,7 +88,7 @@ class Conversations extends Loggable {
       logger.info("STARTING PARENT ID "+x+" "+nodetype)
       User.currentUser match {
         case Full(user) =>  {
-          model.updateNode(nodetype,label,details, user, thenode)
+          model.updateNode(nodetype,label,details, tags,user, thenode)
           S.notice("Edit saved")
           //Updates all comets listeners
           ConversationCometServer ! new EditNodeAction(thenode)
@@ -110,6 +111,7 @@ class Conversations extends Loggable {
         ".ref" #> radios(4) &
         ".label" #> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "editlabel", "maxlength" -> "200", "onkeyup" -> "return imposeMaxLength(this)") &
         ".details"#> SHtml.textarea(details,  details = _ ,"cols" -> "79", "rows" -> "5", "id" -> "editdetails") &
+        ".nodetags" #> SHtml.textarea(tags, tags = _ , "style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resptags" ) &
         ".submit [onclick]" #> SHtml.ajaxCall(JsRaw("$('#editdetails').ckeditorGet().getData()"), { x => details = x;}) &
         ".submit" #> SHtml.ajaxSubmit("Save", process))(in)
       )}
@@ -140,6 +142,7 @@ class Conversations extends Loggable {
     var label = ""
     var details = ""
     var nodetype = ""
+    var tags = ""
     // set in Conversation.show
     var x = "-1"
 
@@ -159,7 +162,7 @@ class Conversations extends Loggable {
       logger.info("STARTING PARENT ID "+x+" "+nodetype)
       User.currentUser match {
         case Full(user) =>  {
-          doRespond(nodetype,label,details,parentId, user)
+          doRespond(nodetype,label,details,parentId, tags, user)
           S.notice("Response saved")
           //Clears the inputs
           JsRaw("$('#resp_step1').show();$('#resp_step2').hide();$('#resplabel').val('');$('#respdetails').val('');")
@@ -181,6 +184,7 @@ class Conversations extends Loggable {
         ".ref" #> radios(4) &
         ".label" #> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resplabel", "maxlength" -> "200", "onkeyup" -> "return imposeMaxLength(this)") &
         ".details"#> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "respdetails") &
+        ".nodetags" #> SHtml.textarea(tags, tags = _ , "style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resptags" ) &
         ".submit [onclick]" #> SHtml.ajaxCall(JsRaw("$('#respdetails').ckeditorGet().getData()"), { x => details = x;}) &
         ".submit" #> SHtml.ajaxSubmit("Save", process))(in)
       )}
@@ -212,11 +216,12 @@ class Conversations extends Loggable {
     var label = ""
     var details = ""
     var nodetype = ""
+    var tags = ""
 
     def process() {
       logger.info("STARTING")
       User.currentUser match {
-        case Full(user) =>  doAdd(title,nodetype,label,details,user)
+        case Full(user) =>  doAdd(title,nodetype,label,details,tags,user)
         case _ => Text("No user available")
 
       }
@@ -234,6 +239,7 @@ class Conversations extends Loggable {
         ".idea" #> radios(1) &
         ".label" #> SHtml.textarea(label, label = _ , "class" -> "required","style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2", "maxlength" -> "200", "onkeyup" -> "return imposeMaxLength(this)") &
         ".details"#> SHtml.textarea(details,  details = _ , "cols" -> "79", "rows" -> "5", "id" -> "details") &        
+        ".nodetags" #> SHtml.textarea(tags, tags = _ , "style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resptags" ) &
         ".submit" #> SHtml.submit("Save", process)
       
 
@@ -266,10 +272,11 @@ class Conversations extends Loggable {
    * @param parentId  the id of the parent node
    * @param user      the user who created it
    */
-  def doRespond(nodetype: String, label: String, details: String, parentId: Long, user: User) = {
+  def doRespond(nodetype: String, label: String, details: String, parentId: Long, tags: String, user: User) = {
     logger.info("PROCESSING "+label+" "+nodetype+" "+parentId)
+ //   println("PROCESSING "+tags)
     var date: Date = new Date()
-    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,user)
+    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,tags, user)
     var parentUniqueId = ""
     if (parentId > -1) {
       var nx = IBISNodeLoc(parentId).record
@@ -305,14 +312,15 @@ class Conversations extends Loggable {
    * @param nodetype the type of the node
    * @param label the label of the node
    * @param details the details of the node
+   * @param tags comma-delimited list of tags
    * @param user  the user who created it
    *
    */
-  def doAdd(title: String, nodetype: String, label: String, details: String, user: User) = {
+  def doAdd(title: String, nodetype: String, label: String, details: String, tags: String, user: User) = {
     logger.info("PROCESSING "+title+" "+nodetype)
     //make the root node
     var date: Date = new Date()
-    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,user)
+    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,tags,user)
     node.save()
     logger.info("PROCESSING-2 "+node)
     //make the conversation itself

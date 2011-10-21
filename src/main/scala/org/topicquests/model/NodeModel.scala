@@ -19,10 +19,11 @@ class NodeModel extends Loggable {
    * @param nodeType
    * @param label 		not <code>null</code>, not empty string
    * @param details 	not <code>null</code>, can be empty string
+   * @param tags  comma-delimited list of tags
    * @param user
    * @return
    */
-  def createNode(nodetype: String, label: String, details: String, user: User): Node = {
+  def createNode(nodetype: String, label: String, details: String, tags: String, user: User): Node = {
     var node : org.topicquests.model.Node = org.topicquests.model.Node.create 
     var date: Date = new Date()
     node.label(surroundCdata(label))
@@ -49,7 +50,7 @@ class NodeModel extends Loggable {
    
     result
   }
-  def updateNode(nodetype: String, label: String, details: String, user: User, node: org.topicquests.model.Node) = {
+  def updateNode(nodetype: String, label: String, details: String, tags: String, user: User, node: org.topicquests.model.Node) = {
 	  logger.info("UPDATING "+nodetype)
     var date: Date = new Date()
     node.label(surroundCdata(label))
