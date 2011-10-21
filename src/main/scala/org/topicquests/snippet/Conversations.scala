@@ -232,7 +232,7 @@ class Conversations extends Loggable {
     }
 
 
-    val radmap = Map("Idea"->"I", "Question"->"Q") //this could have been a Seq[String]
+    val radmap = Map("Question"->"Q", "Idea"->"I") //this could have been a Seq[String]
     val radios: ChoiceHolder[String] = SHtml.radio(radmap.keys.toList,
       Full("Question"),
       nodetype = _ )
