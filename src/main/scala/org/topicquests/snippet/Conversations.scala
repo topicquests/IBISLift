@@ -143,6 +143,8 @@ class Conversations extends Loggable {
     var details = ""
     var nodetype = ""
     var tags = ""
+    var language = "en"  // default -- must add language codes to form
+
     // set in Conversation.show
     var x = "-1"
 
@@ -162,7 +164,7 @@ class Conversations extends Loggable {
       logger.info("STARTING PARENT ID "+x+" "+nodetype)
       User.currentUser match {
         case Full(user) =>  {
-          doRespond(nodetype,label,details,parentId, tags, user)
+          doRespond(nodetype,label,details,parentId, language, tags, user)
           S.notice("Response saved")
           //Clears the inputs
           JsRaw("$('#resp_step1').show();$('#resp_step2').hide();$('#resplabel').val('');$('#respdetails').val('');")
@@ -217,11 +219,12 @@ class Conversations extends Loggable {
     var details = ""
     var nodetype = ""
     var tags = ""
+    var language = "en"  // default -- must add language codes to form
 
     def process() {
       logger.info("STARTING")
       User.currentUser match {
-        case Full(user) =>  doAdd(title,nodetype,label,details,tags,user)
+        case Full(user) =>  doAdd(title,nodetype,label,details,language, tags,user)
         case _ => Text("No user available")
 
       }
@@ -272,11 +275,11 @@ class Conversations extends Loggable {
    * @param parentId  the id of the parent node
    * @param user      the user who created it
    */
-  def doRespond(nodetype: String, label: String, details: String, parentId: Long, tags: String, user: User) = {
+  def doRespond(nodetype: String, label: String, details: String, parentId: Long, language: String, tags: String, user: User) = {
     logger.info("PROCESSING "+label+" "+nodetype+" "+parentId)
  //   println("PROCESSING "+tags)
     var date: Date = new Date()
-    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,tags, user)
+    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,language,tags, user)
     var parentUniqueId = ""
     if (parentId > -1) {
       var nx = IBISNodeLoc(parentId).record
@@ -312,15 +315,16 @@ class Conversations extends Loggable {
    * @param nodetype the type of the node
    * @param label the label of the node
    * @param details the details of the node
+   * @param language
    * @param tags comma-delimited list of tags
    * @param user  the user who created it
    *
    */
-  def doAdd(title: String, nodetype: String, label: String, details: String, tags: String, user: User) = {
+  def doAdd(title: String, nodetype: String, label: String, details: String, language: String, tags: String, user: User) = {
     logger.info("PROCESSING "+title+" "+nodetype)
     //make the root node
     var date: Date = new Date()
-    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,tags,user)
+    var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,language,tags,user)
     node.save()
     logger.info("PROCESSING-2 "+node)
     //make the conversation itself

@@ -19,11 +19,12 @@ class NodeModel extends Loggable {
    * @param nodeType
    * @param label 		not <code>null</code>, not empty string
    * @param details 	not <code>null</code>, can be empty string
+   * @param language
    * @param tags  comma-delimited list of tags
    * @param user
    * @return
    */
-  def createNode(nodetype: String, label: String, details: String, tags: String, user: User): Node = {
+  def createNode(nodetype: String, label: String, details: String, language: String, tags: String, user: User): Node = {
     var node : org.topicquests.model.Node = org.topicquests.model.Node.create 
     var date: Date = new Date()
     node.label(surroundCdata(label))
@@ -33,7 +34,7 @@ class NodeModel extends Loggable {
     node.nodetype(nodetype)
     node.smallImage(nodeTypeToSmallImage(nodetype))
     node.largeImage(nodeTypeToImage(nodetype))
-    //node.lang("en") //TODO lang is wrong
+    node.lang(language) 
     //notify the new node (even though it's not saved yet)
     //NOTE: could move this to wherever createNode is called
     NodeEventDispatcher.dispatchNodeEvent(node.id.toString(),label)
