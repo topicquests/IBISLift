@@ -3,17 +3,23 @@ admin.pwd =	testing!
 admin.uname = testadmin
 
 invite.required = false
-authentication.required = false
+authentication.required = true
 
 db.type = h2
 db.spec = none
 
+;mysql
 db.server = localhost
 db.port = 3306
+;h2
+db.driver = org.h2.Driver
+db.url = jdbc:h2:ibisliftdb;AUTO_SERVER=TRUE
+
 db.database = ibisliftdb
 db.charset = UTF-8
 db.user = ibisliftuser
 db.password = mypass321
 
 max.chat.rows = 30
+max.recentchange.rows = 50
 
