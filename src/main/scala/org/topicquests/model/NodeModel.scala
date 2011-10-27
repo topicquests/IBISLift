@@ -12,7 +12,6 @@ import net.liftweb.common.Loggable
  * <p>A class to form a Node API</p>
  */
 class NodeModel extends Loggable {
-
   /**
    * <p>Create a node; does not deal with parent or child nodes</p>
    * <p>NOTE: the returned node is <em>NOT</em> persisted</p>
@@ -23,6 +22,7 @@ class NodeModel extends Loggable {
    * @param tags  comma-delimited list of tags
    * @param user
    * @return
+   * <p>Note: parentId is taken care of by caller</p>
    */
   def createNode(nodetype: String, label: String, details: String, language: String, tags: String, user: User): Node = {
     var node : org.topicquests.model.Node = org.topicquests.model.Node.create 
@@ -38,6 +38,7 @@ class NodeModel extends Loggable {
     //notify the new node (even though it's not saved yet)
     //NOTE: could move this to wherever createNode is called
     NodeEventDispatcher.dispatchNodeEvent(node.id.toString(),label)
+    RecentChangeCache.add(node)
     node
   }
   
@@ -66,6 +67,7 @@ class NodeModel extends Loggable {
     //NOTE: could move this to wherever createNode is called
   //  NodeEventDispatcher.dispatchNodeEvent(node.id.toString(),label)
     node.save()
+    RecentChangeCache.add(node)
   }
   
   def nodeTypeToSmallImage(nt: String): String = {

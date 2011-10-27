@@ -34,10 +34,10 @@ class Node  extends LongKeyedMapper[Node] with IdPK  with OneToMany[Long, Node]{
 	object creator extends MappedLongForeignKey(this,User)
 	object nodetype extends MappedString(this,32)
 	object parent extends MappedLongForeignKey(this, Node)
-  object conversation extends MappedLongForeignKey(this, IBISConversation)
-	
+    object conversation extends MappedLongForeignKey(this, IBISConversation)
+	//Child nodes
 	object children extends MappedOneToMany(Node, Node.parent, OrderBy(Node.id, Ascending))
-	//TODO add Tags
+	//Tags
 
 	def toJSON(): String = {
 	    var buf: StringBuilder = new StringBuilder("{ \"id\" : \""+this.id+"\", ")

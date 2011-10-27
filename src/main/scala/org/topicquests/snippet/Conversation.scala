@@ -252,6 +252,7 @@ class Conversation extends Loggable {
     val nx = <span>{autname}</span>
     val dx = <span>{dat}</span>
     val det = <div>{Unparsed(Jsoup.clean(con.details.is, XHTMLHelper.whiteList))}</div>
+    val permalink = <a href={"/node/"+param}>Permalink</a>
     //note: here, we add the "response" form when appropriate
     val setHtmlJCmds = if (userCanEdit(con)) {
       SetHtml("tab2", myeditform) &
@@ -259,21 +260,24 @@ class Conversation extends Loggable {
       SetHtml("imglabel", il.child) &
       SetHtml("tabs-1", det) &
       SetHtml("authorname", nx.child) &
-      SetHtml("datetime", dx.child)
+      SetHtml("datetime", dx.child) &
+      SetHtml("permalink",permalink)
     } else if (userCanParticipate(con)) {
       SetHtml("tab2", new Text("Not available")) &
       SetHtml("tab3", mycreateform) &
       SetHtml("imglabel", il.child) &
       SetHtml("tabs-1", det) &
       SetHtml("authorname", nx.child) &
-      SetHtml("datetime", dx.child)
+      SetHtml("datetime", dx.child) &
+      SetHtml("permalink",permalink)
     } else {
       SetHtml("imglabel", il.child) &
       SetHtml("tabs-1", det) &
       SetHtml("tab2", new Text("Not available")) &
       SetHtml("tab3", new Text("Not available")) &
       SetHtml("authorname", nx.child) &
-     SetHtml("datetime", dx.child)
+      SetHtml("datetime", dx.child) &
+      SetHtml("permalink",permalink)
     }                                                                         
     val prepareCkEditorJCmds = OnLoad(JsRaw(
     "delete CKEDITOR.instances['respdetails'];" +
@@ -308,87 +312,11 @@ class Conversation extends Loggable {
   val mycreateform =  Templates(List("/templates-hidden/createconversation")).openOr(<div></div>)
   
 
- /* val myform = XML.loadString("""
-    <lift:Conversations.addresponse>
-     <fieldset>
-      <div>
-       <fieldset>
-        <legend>Create a Response to the Selected Node</legend>
-        <div class="radio">
-         <fieldset>
-          <legend><span>Step1: Select a Node type (REQUIRED):<span>*</span> </span></legend>
-          <div>
-           Question<entry:question></entry:question><img src="/images/ibis/issue.png" />
-           Idea<entry:idea></entry:idea><img src="/images/ibis/position.png" />
-           Pro<entry:pro></entry:pro><img src="/images/ibis/plus.png" />
-           Con<entry:con></entry:con><img src="/images/ibis/minus.png" />
-           Reference<entry:ref></entry:ref><img src="/images/ibis/reference.png" />
-		  </div>
-         </fieldset>
-        </div>
-       <div>
-        <fieldset>
-         <legend><span>Step2: State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>
-         <label for="label">Statement:<span>*</span></label>
-         <entry:label></entry:label>
-        </fieldset>
-       </div>
-       <div>
-        <fieldset>
-  		 <legend>Step3: Explain the Details (Optional)</legend>
-  		 <entry:details></entry:details>
-  		</fieldset>
-  	   </div>
-  	  </fieldset>
-     </div>
-     <entry:submit></entry:submit>
-     <div style="color:red" class="lift:Msgs?showAll=true"></div>
-    </fieldset>
-   </lift:Conversations.addresponse>""")*/
-
-
   /**
    * Returns a NodeSeq that represents the "Edit" form in the
    * "Edit" tab.
    */
   val myeditform =  Templates(List("/templates-hidden/editconversation")).openOr(<div></div>)
-  /*val myeditform = XML.loadString("""
-    <lift:Conversations.updatenode>
-     <fieldset>
-      <div>
-       <fieldset>
-        <legend>Edit the Selected Node</legend>
-        <div class="radio">
-         <fieldset>
-          <legend><span>Step1: Select a Node type (REQUIRED):<span>*</span> </span></legend>
-          <div>
-           Question<editentry:question></editentry:question><img src="/images/ibis/issue.png" />
-           Idea<editentry:idea></editentry:idea><img src="/images/ibis/position.png" />
-           Pro<editentry:pro></editentry:pro><img src="/images/ibis/plus.png" />
-           Con<editentry:con></editentry:con><img src="/images/ibis/minus.png" />
-           Reference<editentry:ref></editentry:ref><img src="/images/ibis/reference.png" />
-		  </div>
-         </fieldset>
-        </div>
-       <div>
-        <fieldset>
-         <legend><span>Step2: State the Idea, Question Argument, or Resource (REQUIRED)<span>*</span> </span></legend>
-         <label for="label">Statement:<span>*</span></label>
-         <editentry:label></editentry:label>
-        </fieldset>
-       </div>
-       <div>
-        <fieldset>
-  		 <legend>Step3: Explain the Details (Optional)</legend>
-  		 <editentry:details></editentry:details>
-  		</fieldset>
-  	   </div>
-  	  </fieldset>
-     </div>
-     <editentry:submit></editentry:submit>
-     <div style="color:red" class="lift:Msgs?showAll=true"></div>
-    </fieldset>
-   </lift:Conversations.updatenode>""")*/
 
 
 }

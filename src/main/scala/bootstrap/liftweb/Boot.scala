@@ -25,6 +25,8 @@ import org.topicquests.util.ConversationHelper
 class Boot extends Loggable {
   def boot {
 
+	  RecentChangeCache.setSize(50)
+	  
     //Set the template format to XHTML and the Output to HTML5
     //LiftRules.htmlProperties.default.set((r: Req) => new XHtmlInHtml5OutProperties(r.userAgent))
     // Use HTML5 for rendering
@@ -130,6 +132,9 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
 
     val newconTempl = Template({ () => <lift:embed what="newconversation" />})
     val wsexportTempl = Template({ () => <lift:embed what="wsexport" />})
+    val recentchangesTempl = Template({ () => <lift:embed what="recentchanges" />})
+    val nodeB = Template({ () => <lift:embed what="nodeview" />})
+    val tagB = Template({ () => <lift:embed what="tagview" />})
 
     //Check authentications properties
     Props.requireOrDie("invite.required")
@@ -149,6 +154,8 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
     def menus: List[Menu] =
       (Menu(Loc("Home", "index" :: Nil, "Home", User.AddUserMenusAfter)) ::
               Menu(Loc("Conversation", "conversation" :: Nil, "Conversation", Hidden, conB, AuthCheck)) ::
+              Menu(Loc("Node", "node" :: Nil, "Node", Hidden, nodeB, AuthCheck)) ::
+              Menu(Loc("Recent Changes", "recentchanges" :: Nil, "Recent Changes", recentchangesTempl, AuthCheck)) ::
               Menu(Loc("New Conversation", "newconversation" :: Nil, "New Conversation", newconTempl, User.IfLoggedIn)) ::
               Menu(Loc("WS Export", "wsexport" :: Nil, "WS Export",  Hidden, wsexportTempl, AuthCheck)) ::
               Menu(Loc("Admin", "admin" :: "index" :: Nil, "Admin", User.IfAdmin), adminMenus : _*) ::
@@ -165,6 +172,10 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
       case RewriteRequest(ParsePath("conversation" :: conversationId :: Nil, _, _, _), _, _) => {
         val map = Map[String,String]("id" -> conversationId);
         RewriteResponse("conversation" :: Nil, map)
+      }
+      case RewriteRequest(ParsePath("node" :: conversationId :: Nil, _, _, _), _, _) => {
+        val map = Map[String,String]("id" -> conversationId);
+        RewriteResponse("node" :: Nil, map)
       }
       case RewriteRequest(ParsePath("wsexport" :: conversationId :: Nil, _, _, _), _, _) => {
         val map = Map[String,String]("id" -> conversationId);

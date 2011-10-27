@@ -33,11 +33,11 @@ import org.topicquests.util.StringHelper
  * 	load a conversation from database
  * @param id
  */
-case class ConversationLoc(id: String) {
-  lazy val record: IBISConversation = {
-    IBISConversation.find(By(IBISConversation.id, id.toLong)).open_!
-  }
-}
+//case class ConversationLoc(id: String) {
+//  lazy val record: IBISConversation = {
+//    IBISConversation.find(By(IBISConversation.id, id.toLong)).open_!
+//  }
+//}
 
 /**
  * Fetch a particular node
@@ -50,10 +50,13 @@ case class IBISNodeLoc(id: Long) {
 }
 
 class Conversations extends Loggable {
+  //TODO: make the cache size a config property
+//  var ringBuffer: RecentChangeCache =  RecentChangeCache;
 
   //used for Node creation
   var model: NodeModel = new NodeModel()
-
+  
+  
   /**Creates the bindings for the edit node form
     * @param in  the xml to be transformed
    * @return the xml transformed
@@ -245,26 +248,6 @@ class Conversations extends Loggable {
         ".nodetags" #> SHtml.textarea(tags, tags = _ , "style" -> "width:auto;height:auto;","cols" -> "79","rows" -> "2","id" -> "resptags" ) &
         ".submit" #> SHtml.submit("Save", process)
       
-
-    /*bind("entry", in,
-      "title" -> SHtml.text(title, title = _, "class" -> "required"),
-      "question" -> radios(1),
-      "idea" -> radios(0),
-      "label" -> SHtml.textarea(label,
-        label = _ ,
-        "class" -> "required",
-        "style" -> "width:auto;height:auto;",
-        "cols" -> "68",
-        "rows" -> "2"),
-      "details" -> SHtml.textarea(details,
-        details = _ ,
-        "style" -> "width:auto;",
-        "cols" -> "68",
-        "rows" -> "5"),
-      /*"submit [onclick]" -> SHtml.ajaxCall(JsRaw("ckeditor.getData()"), { x => details = x;}),*/
-      "submit" -> SHtml.submit("Update", process)
-      )*/
-
   }
 
   /**
@@ -361,8 +344,27 @@ class Conversations extends Loggable {
     messageList.flatMap{m =>
       val ix = m.id.toString()
       val lbl = m.label.toString()
-      <a href={"/conversation/"+ix}>{lbl}</a><br />
+      <a href={"/conversation/"+ix}><img src={"/images/ibis/map_sm.png"}/><b>{lbl}</b></a><br />
     }
+  }
+  
+  def listRecentChanges(in: NodeSeq) :NodeSeq = {
+    var nx: org.topicquests.model.Node = null
+    var itr: Iterator[org.topicquests.model.Node] = RecentChangeCache.iterator
+    var theList: NodeSeq    = null
+    while (itr.hasNext) {
+      nx = itr.next()
+      if (theList == null)
+    	  theList =  <b><a href={"node/"+nx.id.toString()}><img src={"/images/ibis/"+ nx.smallImage}/>{StringHelper.stripCdata(nx.label.toString())}</a></b><br />
+      else
+    	  theList = (<b><a href={"node/"+nx.id.toString()}><img src={"/images/ibis/"+ nx.smallImage}/>{StringHelper.stripCdata(nx.label.toString())}</a></b><br />).++(theList)
+    }
+    if (theList == null)
+    	theList = new Text("No changes yet")
+    logger.debug("LISTRECENTCHANGES-3 "+theList)
+    bind ("v", in, 
+      "list" -> theList
+    )
   }
 
 }
