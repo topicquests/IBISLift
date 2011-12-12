@@ -26,6 +26,7 @@ class Boot extends Loggable {
   def boot {
 
 	  RecentChangeCache.setSize(50)
+	  Environment.init()
 	  
     //Set the template format to XHTML and the Output to HTML5
     //LiftRules.htmlProperties.default.set((r: Req) => new XHtmlInHtml5OutProperties(r.userAgent))
@@ -77,6 +78,7 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
     Schemifier.schemify(true, Schemifier.infoF _,
       User,
       Node,
+      Tag,
       IBISConversation,
       ChatLine,
       Image,
@@ -155,10 +157,13 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
       (Menu(Loc("Home", "index" :: Nil, "Home", User.AddUserMenusAfter)) ::
               Menu(Loc("Conversation", "conversation" :: Nil, "Conversation", Hidden, conB, AuthCheck)) ::
               Menu(Loc("Node", "node" :: Nil, "Node", Hidden, nodeB, AuthCheck)) ::
-              Menu(Loc("Recent Changes", "recentchanges" :: Nil, "Recent Changes", recentchangesTempl, AuthCheck)) ::
+              Menu(Loc("Tag", "tag" :: Nil, "Tag", Hidden, tagB, AuthCheck)) ::
+              Menu(Loc("Recent Changes", "recentchanges" :: Nil, "Recent Changes", recentchangesTempl)) ::
               Menu(Loc("New Conversation", "newconversation" :: Nil, "New Conversation", newconTempl, User.IfLoggedIn)) ::
               Menu(Loc("WS Export", "wsexport" :: Nil, "WS Export",  Hidden, wsexportTempl, AuthCheck)) ::
               Menu(Loc("Admin", "admin" :: "index" :: Nil, "Admin", User.IfAdmin), adminMenus : _*) ::
+      Menu(Loc("Static", Link(List("static"), true, "/static/index"), 
+	       "Static Content")) ::
               Nil) ::: User.menus;
     //TODO add other menus as needed
 
@@ -176,6 +181,10 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
       case RewriteRequest(ParsePath("node" :: conversationId :: Nil, _, _, _), _, _) => {
         val map = Map[String,String]("id" -> conversationId);
         RewriteResponse("node" :: Nil, map)
+      }
+      case RewriteRequest(ParsePath("tag" :: conversationId :: Nil, _, _, _), _, _) => {
+        val map = Map[String,String]("id" -> conversationId);
+        RewriteResponse("tag" :: Nil, map)
       }
       case RewriteRequest(ParsePath("wsexport" :: conversationId :: Nil, _, _, _), _, _) => {
         val map = Map[String,String]("id" -> conversationId);
