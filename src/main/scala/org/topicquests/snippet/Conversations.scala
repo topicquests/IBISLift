@@ -17,7 +17,7 @@ import scala.xml._
 import scala.collection.immutable.List
 import java.util.Date
 import net.liftweb.http.js.JsCmds._
-import org.topicquests.model.NodeModel
+import org.topicquests.model._
 import js.jquery.JqJE
 import org.topicquests.comet.{EditNodeAction, ConversationCometServer, AddNodeAction}
 import org.topicquests.util.StringHelper
@@ -281,11 +281,11 @@ class Conversations extends Loggable {
       //logger.info("PROCESSING-AA "+snappers)
       snappers :+ node
       // logger.info("PROCESSING-BB "+snappers)
-      nx.save()
+      nx.save
       //	  logger.info("PROCESSING-XX "+nx)
     }
     //still need to know how this plays out
-    node.save()
+    node.save
 
     //Updates all comets listeners
     ConversationCometServer ! new AddNodeAction(parentId, parentUniqueId, node)
@@ -308,7 +308,7 @@ class Conversations extends Loggable {
     //make the root node
     var date: Date = new Date()
     var node: org.topicquests.model.Node = model.createNode(nodetype,label,details,language,tags,user)
-    node.save()
+    node.save
     logger.info("PROCESSING-2 "+node)
     //make the conversation itself
     //technically speaking, this is really a Map node
@@ -323,9 +323,13 @@ class Conversations extends Loggable {
     logger.info("PROCESSED "+conversation.id)
 
     //Adds the conversation to the node object
-    node.conversation(conversation).save()
+    node.conversation(conversation).save
   }
 
+  def header(in:NodeSeq) = {
+    <span><h2>{Environment.landingTitle}</h2><h3>{Environment.subTitle}</h3></span>
+  }
+  
   /**
    * List all IBISConversations as HREFs for the front page
    * TODO: paging if the list gets too long
