@@ -3,7 +3,9 @@ admin.pwd =	testing!
 admin.uname = testadmin
 
 invite.required = false
-authentication.required = true
+authentication.required = false
+
+landing.title = Conversations that matter
 
 db.type = h2
 db.spec = none
