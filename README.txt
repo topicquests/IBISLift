@@ -81,6 +81,24 @@ we call knowledge gardening.
 
 Getting Started =================================================
 
+Configuring the platform:
+
+The default.props file contains a number of important config values.
+The most important one is
+static.data.path  which must be set to the absolute path of the installed /static/ folder
+inside webapps
+
+Others are a bit more benign:
+
+invite.required defaults to false; setting to true means that an Admin can add an
+email address to an invitation list; only those on that invitation list can sign up.
+
+authentication.required defaults to false; setting to true means that only those who
+are logged in can see any content on the site.
+
+landing.title defaults to "Conversations that matter"; it can be set to any message
+desired to define the site.
+
 From command line:
 
 sbt
