@@ -17,8 +17,6 @@ import scala.xml._
  */
 class StaticContentSnippet {
 
- // def $tag(): Int = { 0 }
-
   def show(in:NodeSeq):NodeSeq = {
     var files: Array[File] = new File(Environment.staticFolderPath).listFiles()
     println("##### "+files)
@@ -31,24 +29,25 @@ class StaticContentSnippet {
       var fx:String = ""
       for (px <- files) {
         fx = px.getPath()
-        where = fx.indexOf("index")
+        where = fx.indexOf("index") // don't show the index file
 	        if (where == -1) {
-	        where = fx.indexOf("static")
-	        if (where > -1) {
-	          fx = fx.substring(where-1)
-	           buf.append("<a href=\""+fx+"\">"+fx+"</a><br />");
-	        }
-	        }
+		        where = fx.indexOf("static") // grab everything including "static"
+		        //that's because people will use the entire path in hrefs and image links
+		        if (where > -1) {
+		          fx = fx.substring(where-1)
+		           buf.append("<a href=\""+fx+"\">"+fx+"</a><br />");
+		        }
+		    }
       }
     }
     buf.append("</span>");
     var filelist:NodeSeq = new Text("no files");
-    try {
+    try { // always dangerous
       filelist = XML.loadString(buf.toString())
     } catch {
       case e:Exception =>println(e.getMessage())
     }
-    
+    //bind the value into html
     bind("v",in,
         "files" -> filelist
     )
