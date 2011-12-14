@@ -1,10 +1,19 @@
+;default administrator
+;use this to upgrade any member to admin
+;then change the password for this admin
 admin.email = super@admin.com
 admin.pwd =	testing!
 admin.uname = testadmin
 
+; set to true to close off sign up to only
+; those email addresses added to an invitation list
+; by an admin
 invite.required = false
+; set to true to make the site navigable only to
+; authenticated users
 authentication.required = false
 
+; h2 heading for front page
 landing.title = Conversations that matter
 
 db.type = h2
@@ -25,3 +34,6 @@ db.password = mypass321
 max.chat.rows = 30
 max.recentchange.rows = 50
 
+;path to static data folder
+;NOTE: must be changed for each installation
+static.data.path = C:/projects/IssueQuest/IBIS-Lift/ibisgit/IBISLift/target/scala_2.9.0-1/webapp/static
