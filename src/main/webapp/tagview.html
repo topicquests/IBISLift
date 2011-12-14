@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/style/conversation.css" type="text/css" media="all" />
+    <script type="text/javascript" src="/scripts/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src = "/scripts/jquery.scrollTo.js"></script>
+    <!--  <script type="text/javascript" src = "/scripts/ibis.js"></script> -->
+    <script type="text/javascript" src="/scripts/jquery-columnnav-1.1.0.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/scripts/ckeditor/adapters/jquery.js"></script>
+     <script type="text/javascript" class="lift:Chat.setscripts"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function() {
+            $(".opt").live('click', function() {
+                var val = $(this).attr('id');
+                $('.' + val).click();
+                $('#resp_step1').hide();
+                $('#resp_step2').show();
+            });
+
+            $('.time-formatted').each(function (i) {toLocalDate($(this)); $(this).removeClass('time-formatted');});
+
+            $( "#tabs" ).tabs();
+
+             scrollBottom();
+
+            /**
+             * When pressing enter in the chat textbox it submits the form
+             */
+            $("#chatinput").keydown(function(e) {
+              if (e.keyCode === 13 && !e.ctrlKey) {
+                e.preventDefault();
+                submitchat();
+              }
+             });
+        
+
+
+        });
+
+        function scrollBottom(){
+          var height = $('#chat').height();
+          $('.chat-messages-container').animate({scrollTop: height}, 500);
+        }
+
+        var months = new Array(12);
+        months[0] = "Jan";
+        months[1] = "Feb";
+        months[2] = "Mar";
+        months[3] = "Apr";
+        months[4] = "May";
+        months[5] = "Jun";
+        months[6] = "Jul";
+        months[7] = "Aug";
+        months[8] = "Sep";
+        months[9] = "Oct";
+        months[10] = "Nov";
+        months[11] = "Dec";
+
+        function toLocalDate($date){
+            var date = new Date(parseFloat($date.html()));
+            var dateStr = months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes();
+            $date.html(dateStr);
+        }
+
+         //]]>
+    </script>
+
+</head>
+
+<body>
+<div style="align: left"><a href="/"><img src="/images/TQ9.gif" /></a></div>
+
+<script id="myscript"  class="lift:NodeSnippet.preparejavascript"></script >
+<!--  <center> -->
+<div class="lift:comet?type=ConversationComet"></div>
+<div class="lift:TagSnippet.show" >
+
+    <table width="900px">
+        <tr>
+            <td><h2>Selected Tag</h2></h2><v:selectedtag></v:selectedtag></td>
+        </tr>
+        <tr>
+            <td><h2>Related Nodes</h2></h2><v:relatednodes></v:relatednodes></td>
+        </tr>
+    </table>
+</div>
+
+<!--  </center> -->
+
+</body>
+</html>
