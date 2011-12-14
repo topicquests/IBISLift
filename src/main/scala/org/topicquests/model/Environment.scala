@@ -13,6 +13,7 @@ import Helpers._
 object Environment {
   var _landingTitle:String = ""
   var _subTitle:String = "Public, Open signup"
+  var _staticPath = ""
     
   def init() {
     _landingTitle = Props.get("landing.title") openOr "Conversations that matter"
@@ -26,9 +27,10 @@ object Environment {
     else if (pvt && !invite)
       _subTitle = "Private, Open signup"
         
+    _staticPath = Props.get("static.data.path").open_!
   }
 
   def landingTitle = _landingTitle
   def subTitle = _subTitle
-  
+  def staticFolderPath = _staticPath
 }
