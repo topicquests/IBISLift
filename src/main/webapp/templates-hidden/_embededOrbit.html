@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width" />
+</head>
+<body class="lift:content_id=orbGridRow">
+
+	<!-- include starts here -->
+	<div id="orbGridRow" >
+		<!-- will be merged with template head -->
+		<head_merge>
+		<link rel="stylesheet" href="/style/orbit-1.3.0.css">
+		<script type="text/javascript" src="/scripts/jquery.orbit-1.3.0.js"></script>
+		<script type="text/javascript">
+			$(window).load(function() {
+				$('#featured').orbit({
+					bullets : true 
+				});
+			});
+		</script> <!--[if IE]>
+          <style type="text/css">
+            .timer { display: none !important; }
+            div.orbcaption { background:transparent; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);zoom: 1; }
+          </style>
+          <![endif]--> 
+          </head_merge>
+		<hr />
+
+			<div id="featured">
+				<img src="/images/orbit/ibishelp/Slide1.JPG" /> 
+				<img src="/images/orbit/ibishelp/Slide2.JPG"/> 
+				<img src="/images/orbit/ibishelp/Slide3.JPG" /> 
+				<img src="/images/orbit/ibishelp/Slide4.JPG" /> 
+				<img src="/images/orbit/ibishelp/Slide5.JPG" /> 
+				<img src="/images/orbit/ibishelp/Slide6.JPG" /> 
+				<img src="/images/orbit/ibishelp/Slide7.JPG" /> 
+				<img src="/images/orbit/ibishelp/Slide8.JPG" /> 
+			</div>
+	</div>
+
+</body>
