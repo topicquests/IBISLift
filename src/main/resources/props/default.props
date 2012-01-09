@@ -35,5 +35,5 @@ max.chat.rows = 30
 max.recentchange.rows = 50
 
 ;path to static data folder
-;NOTE: must be changed for each installation
+;NOTE: must be changed for each installation: CHANGE ME
 static.data.path = C:/projects/IssueQuest/IBIS-Lift/ibisgit/IBISLift/target/scala_2.9.0-1/webapp/static
