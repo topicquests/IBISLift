@@ -137,6 +137,7 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
     val recentchangesTempl = Template({ () => <lift:embed what="recentchanges" />})
     val nodeB = Template({ () => <lift:embed what="nodeview" />})
     val tagB = Template({ () => <lift:embed what="tagview" />})
+    val conversationsTempl = Template({ () => <lift:embed what="conversationsindex" />})
 
     //Check authentications properties
     Props.requireOrDie("invite.required")
@@ -155,6 +156,8 @@ println("XXXX "+Props.get("db.user")+" "+Props.get("db.password"))
     // Build SiteMap
     def menus: List[Menu] =
       (Menu(Loc("Home", "index" :: Nil, "Home", User.AddUserMenusAfter)) ::
+        //Conversations index
+       Menu(Loc("Conversations", "conversationsindex" :: Nil, "Conversations", conversationsTempl, AuthCheck)) ::
               Menu(Loc("Conversation", "conversation" :: Nil, "Conversation", Hidden, conB, AuthCheck)) ::
               Menu(Loc("Node", "node" :: Nil, "Node", Hidden, nodeB, AuthCheck)) ::
               Menu(Loc("Tag", "tag" :: Nil, "Tag", Hidden, tagB, AuthCheck)) ::
