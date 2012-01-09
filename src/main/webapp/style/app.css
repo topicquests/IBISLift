@@ -1,0 +1,114 @@
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+/* -------------------------------------------------- 
+   Orbit 
+-----------------------------------------------------*/
+#orbit4u .content {
+	background: url(../orbit/dummy-images/coffee-940x450.jpg); 
+}
+#orbit4u .content h1 {
+	font-family: 'Helvetica', 'Arial', serif;
+	color: #2f260f; 
+	font-weight: bold !important;
+	text-transform: uppercase; 
+	text-shadow: 
+		1px 1px 0 #f8f0d1,
+		2px 2px 0 #f8f0d1,
+		3px 3px 0 #1a5774;
+	text-align: center; 
+	margin-top: 5%;
+}
+#orbit4u .content h3 {
+	font-family: 'Helvetica', 'Arial', serif;
+	color: #7f6b37; 
+	font-weight: bold !important;
+	text-align: center; 
+}
+
+#orbit4u { background: url(../orbit/images/spinner.gif) no-repeat center center #000; height: 305px; margin-bottom: 20px; }
+#orbit4u.orbit { height: auto; }
+
+/* #orbit4u img, #orbit4u div { display: none; } */
+#orbit4u.orbit img, #orbit4u.orbit div { display: block; }
+
+@media handheld, only screen and (max-width: 767px) {
+
+	#orbit4u { height: 165px; }
+	#orbit4u.orbit { height: auto; }
+
+	dl.nice.tabs.mobile { margin-bottom: 0px; }
+	.nice.tabs.mobile dd a { padding: 12px 20px; }
+	
+	div.foundation-header h1 { font-size: 32px; font-size: 3.2rem; }
+}
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+.edit_error_class {
+  display: block;
+  color: red;
+}
+
+.sidebar ul {
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #ccc;
+}
+	 
+
+.sidebar ul li {
+	margin:0;
+	padding:0;
+	list-style:none;
+	border:1px solid #ccc;
+	border-bottom:none;
+}
+
+.sidebar ul li a {
+	display:block;
+	padding:3px;
+	text-indent:30px;
+	text-decoration:none;
+}
+
+.sidebar ul li span {
+	display:block;
+	padding:3px;
+	text-indent:30px;
+	text-decoration:none;
+}
+
+.sidebar ul li a:hover {
+	background-color: #eee;
+}
+
+
+/* -----------------------------------------
+  Footer
+----------------------------------------- */
+#theFooter .alt {
+	color: #666666;
+	font-family: "Warnock Pro", "Goudy Old Style", "Palatino",
+		"Book Antiqua", Georgia, serif;
+	font-style: italic;
+	font-weight: normal;
+}
+#theFooter h4 {
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom: 1.25em;
+}
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
