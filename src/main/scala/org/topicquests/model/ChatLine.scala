@@ -13,7 +13,7 @@ class ChatLine extends LongKeyedMapper[ChatLine] with IdPK {
 
   def getSingleton = ChatLine
 
-  object conversation extends MappedLongForeignKey(this, User)
+  object conversation extends MappedLongForeignKey(this, IBISConversation)
   object user extends MappedLongForeignKey(this, User)
   object chat extends MappedText(this)  
   object createdDate extends MappedDateTime(this){
